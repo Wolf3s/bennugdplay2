@@ -1,0 +1,1559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<link rel="top" href="./index.php" title="forums.ps2dev.org Forum Index" />
+<link rel="search" href="./search.php" title="Search" />
+<link rel="help" href="./faq.php" title="FAQ" />
+<link rel="author" href="./memberlist.php" title="Memberlist" />
+<link rel="prev" href="viewtopic.php?t=6995&amp;view=previous" title="View previous topic" />
+<link rel="next" href="viewtopic.php?t=6995&amp;view=next" title="View next topic" />
+<link rel="up" href="viewforum.php?f=11" title="PS2 Development" />
+<link rel="chapter forum" href="viewforum.php?f=2" title="Announcements" />
+<link rel="chapter forum" href="viewforum.php?f=31" title="Patch Submissions" />
+<link rel="chapter forum" href="viewforum.php?f=1" title="General Discussion" />
+<link rel="chapter forum" href="viewforum.php?f=22" title="Help Wanted Requests" />
+<link rel="chapter forum" href="viewforum.php?f=16" title="The Incredible Hall Of Shame" />
+<link rel="chapter forum" href="viewforum.php?f=32" title="PS1 Development" />
+<link rel="chapter forum" href="viewforum.php?f=11" title="PS2 Development" />
+<link rel="chapter forum" href="viewforum.php?f=25" title="PS3 Development" />
+<link rel="chapter forum" href="viewforum.php?f=27" title="PS3 Linux Development" />
+<link rel="chapter forum" href="viewforum.php?f=14" title="PSP Development" />
+<link rel="chapter forum" href="viewforum.php?f=21" title="PSP Lua Player Development" />
+<link rel="chapter forum" href="viewforum.php?f=28" title="Other Development" />
+<link rel="chapter forum" href="viewforum.php?f=29" title="spu-medialib" />
+
+<title>forums.ps2dev.org :: View topic - Tutorial: Setting up CodeBlocks for ps2dev</title>
+<!-- link rel="stylesheet" href="templates/subSilver/subSilver.css" type="text/css" -->
+<style type="text/css">
+<!--
+/*
+  The original subSilver Theme for phpBB version 2+
+  Created by subBlue design
+  http://www.subBlue.com
+
+  NOTE: These CSS definitions are stored within the main page body so that you can use the phpBB2
+  theme administration centre. When you have finalised your style you could cut the final CSS code
+  and place it in an external file, deleting this section to save bandwidth.
+*/
+
+/* General page style. The scroll bar colours only visible in IE5.5+ */
+body {
+	background-color: #E5E5E5;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif }
+a:link,a:active,a:visited { color : #006699; }
+a:hover		{ text-decoration: underline; color : #DD6900; }
+hr	{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+
+/* This is the outline round the main forum tables */
+.forumline	{ background-color: #FFFFFF; border: 2px #006699 solid; }
+
+/* Main table cell colours and backgrounds */
+td.row1	{ background-color: #EFEFEF; }
+td.row2	{ background-color: #DEE3E7; }
+td.row3	{ background-color: #D1D7DC; }
+
+/*
+  This is for the table cell above the Topics, Post & Last posts on the index.php page
+  By default this is the fading out gradiated silver background.
+  However, you could replace this with a bitmap specific for each forum
+*/
+td.rowpic {
+		background-color: #FFFFFF;
+		background-image: url(templates/subSilver/images/cellpic2.jpg);
+		background-repeat: repeat-y;
+}
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #FFA34F; font-size: 11px; font-weight : bold;
+	background-color: #006699; height: 25px;
+	background-image: url(templates/subSilver/images/cellpic3.gif);
+}
+
+td.cat,td.catHead,td.catSides,td.catLeft,td.catRight,td.catBottom {
+			background-image: url(templates/subSilver/images/cellpic1.gif);
+			background-color:#D1D7DC; border: #FFFFFF; border-style: solid; height: 28px;
+}
+
+/*
+  Setting additional nice inner borders for the main table cells.
+  The names indicate which sides the border will be on.
+  Don't worry if you don't understand this, just ignore it :-)
+*/
+td.cat,td.catHead,td.catBottom {
+	height: 29px;
+	border-width: 0px 0px 0px 0px;
+}
+th.thHead,th.thSides,th.thTop,th.thLeft,th.thRight,th.thBottom,th.thCornerL,th.thCornerR {
+	font-weight: bold; border: #FFFFFF; border-style: solid; height: 28px;
+}
+td.row3Right,td.spaceRow {
+	background-color: #D1D7DC; border: #FFFFFF; border-style: solid;
+}
+
+th.thHead,td.catHead { font-size: 12px; border-width: 1px 1px 0px 1px; }
+th.thSides,td.catSides,td.spaceRow	 { border-width: 0px 1px 0px 1px; }
+th.thRight,td.catRight,td.row3Right	 { border-width: 0px 1px 0px 0px; }
+th.thLeft,td.catLeft	  { border-width: 0px 0px 0px 1px; }
+th.thBottom,td.catBottom  { border-width: 0px 1px 1px 1px; }
+th.thTop	 { border-width: 1px 0px 0px 0px; }
+th.thCornerL { border-width: 1px 0px 0px 1px; }
+th.thCornerR { border-width: 1px 1px 0px 0px; }
+
+/* The largest text used in the index page title and toptic title etc. */
+.maintitle	{
+	font-weight: bold; font-size: 22px; font-family: "Trebuchet MS",Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none; line-height : 120%; color : #000000;
+}
+
+/* General text */
+.gen { font-size : 12px; }
+.genmed { font-size : 11px; }
+.gensmall { font-size : 10px; }
+.gen,.genmed,.gensmall { color : #000000; }
+a.gen,a.genmed,a.gensmall { color: #006699; text-decoration: none; }
+a.gen:hover,a.genmed:hover,a.gensmall:hover	{ color: #DD6900; text-decoration: underline; }
+
+/* The register, login, search etc links at the top of the page */
+.mainmenu		{ font-size : 11px; color : #000000 }
+a.mainmenu		{ text-decoration: none; color : #006699;  }
+a.mainmenu:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Forum category titles */
+.cattitle		{ font-weight: bold; font-size: 12px ; letter-spacing: 1px; color : #006699}
+a.cattitle		{ text-decoration: none; color : #006699; }
+a.cattitle:hover{ text-decoration: underline; }
+
+/* Forum title: Text and link to the forums used in: index.php */
+.forumlink		{ font-weight: bold; font-size: 12px; color : #006699; }
+a.forumlink 	{ text-decoration: none; color : #006699; }
+a.forumlink:hover{ text-decoration: underline; color : #DD6900; }
+
+/* Used for the navigation text, (Page 1,2,3 etc) and the navigation bar when in a forum */
+.nav			{ font-weight: bold; font-size: 11px; color : #000000;}
+a.nav			{ text-decoration: none; color : #006699; }
+a.nav:hover		{ text-decoration: underline; }
+
+/* titles for the topics: could specify viewed link colour too */
+.topictitle,h1,h2	{ font-weight: bold; font-size: 11px; color : #000000; }
+a.topictitle:link   { text-decoration: none; color : #006699; }
+a.topictitle:visited { text-decoration: none; color : #5493B4; }
+a.topictitle:hover	{ text-decoration: underline; color : #DD6900; }
+
+/* Name of poster in viewmsg.php and viewtopic.php and other places */
+.name			{ font-size : 11px; color : #000000;}
+
+/* Location, number of posts, post date etc */
+.postdetails		{ font-size : 10px; color : #000000; }
+
+/* The content of the posts (body of text) */
+.postbody { font-size : 12px; line-height: 18px}
+a.postlink:link	{ text-decoration: none; color : #006699 }
+a.postlink:visited { text-decoration: none; color : #5493B4; }
+a.postlink:hover { text-decoration: underline; color : #DD6900}
+
+/* Quote & Code blocks */
+.code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.quote {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; color: #444444; line-height: 125%;
+	background-color: #FAFAFA; border: #D1D7DC; border-style: solid;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+/* Copyright and bottom info */
+.copyright		{ font-size: 10px; font-family: Verdana, Arial, Helvetica, sans-serif; color: #444444; letter-spacing: -1px;}
+a.copyright		{ color: #444444; text-decoration: none;}
+a.copyright:hover { color: #000000; text-decoration: underline;}
+
+/* Form elements */
+input,textarea, select {
+	color : #000000;
+	font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+	border-color : #000000;
+}
+
+/* The text input fields background colour */
+input.post, textarea.post, select {
+	background-color : #FFFFFF;
+}
+
+input { text-indent : 2px; }
+
+/* The buttons used for bbCode styling in message post */
+input.button {
+	background-color : #EFEFEF;
+	color : #000000;
+	font-size: 11px; font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/* The main submit button option */
+input.mainoption {
+	background-color : #FAFAFA;
+	font-weight : bold;
+}
+
+/* None-bold submit button */
+input.liteoption {
+	background-color : #FAFAFA;
+	font-weight : normal;
+}
+
+/* This is the line in the posting page which shows the rollover
+  help line. This is actually a text box, but if set to be the same
+  colour as the background no one will know ;)
+*/
+.helpline { background-color: #DEE3E7; border-style: none; }
+
+/* Import the fancy styles for IE only (NS4.x doesn't use the @import function) */
+@import url("templates/subSilver/formIE.css");
+-->
+</style>
+</head>
+<body bgcolor="#E5E5E5" text="#000000" link="#006699" vlink="#5493B4">
+
+<a name="top"></a>
+
+<table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+	<tr>
+		<td class="bodyline"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tr>
+				<td><a href="index.php"><img src="templates/subSilver/images/logo_phpBB.gif" border="0" alt="forums.ps2dev.org Forum Index" vspace="1" /></a></td>
+				<td align="center" width="100%" valign="middle"><span class="maintitle">forums.ps2dev.org</span><br /><span class="gen">Homebrew PS2, PSP & PS3 Development Discussions<br />&nbsp; </span>
+				<table cellspacing="0" cellpadding="2" border="0">
+					<tr>
+						<td align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="faq.php" class="mainmenu"><img src="templates/subSilver/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="FAQ" hspace="3" />FAQ</a>&nbsp; &nbsp;<a href="search.php" class="mainmenu"><img src="templates/subSilver/images/icon_mini_search.gif" width="12" height="13" border="0" alt="Search" hspace="3" />Search</a>&nbsp; &nbsp;<a href="memberlist.php" class="mainmenu"><img src="templates/subSilver/images/icon_mini_members.gif" width="12" height="13" border="0" alt="Memberlist" hspace="3" />Memberlist</a>&nbsp; &nbsp;<a href="groupcp.php" class="mainmenu"><img src="templates/subSilver/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="Usergroups" hspace="3" />Usergroups</a>&nbsp;
+						&nbsp;<a href="profile.php?mode=register" class="mainmenu"><img src="templates/subSilver/images/icon_mini_register.gif" width="12" height="13" border="0" alt="Register" hspace="3" />Register</a>&nbsp;
+						</span></td>
+					</tr>
+					<tr>
+						<td height="25" align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="profile.php?mode=editprofile" class="mainmenu"><img src="templates/subSilver/images/icon_mini_profile.gif" width="12" height="13" border="0" alt="Profile" hspace="3" />Profile</a>&nbsp; &nbsp;<a href="privmsg.php?folder=inbox" class="mainmenu"><img src="templates/subSilver/images/icon_mini_message.gif" width="12" height="13" border="0" alt="Log in to check your private messages" hspace="3" />Log in to check your private messages</a>&nbsp; &nbsp;<a href="login.php" class="mainmenu"><img src="templates/subSilver/images/icon_mini_login.gif" width="12" height="13" border="0" alt="Log in" hspace="3" />Log in</a>&nbsp;</span></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table>
+
+		<br />
+
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" colspan="2"><a class="maintitle" href="viewtopic.php?t=6995&amp;start=0&amp;postdays=0&amp;postorder=asc&amp;highlight=">Tutorial: Setting up CodeBlocks for ps2dev</a><br />
+	  <span class="gensmall"><b></b><br />
+	  &nbsp; </span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+  <tr>
+	<td align="left" valign="bottom" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=11"><img src="templates/subSilver/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=6995"><img src="templates/subSilver/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php" class="nav">forums.ps2dev.org Forum Index</a>
+	  -> <a href="viewforum.php?f=11" class="nav">PS2 Development</a></span></td>
+  </tr>
+</table>
+
+<table class="forumline" width="100%" cellspacing="1" cellpadding="3" border="0">
+	<tr align="right">
+		<td class="catHead" colspan="2" height="28"><span class="nav"><a href="viewtopic.php?t=6995&amp;view=previous" class="nav">View previous topic</a> :: <a href="viewtopic.php?t=6995&amp;view=next" class="nav">View next topic</a> &nbsp;</span></td>
+	</tr>
+	
+	<tr>
+		<th class="thLeft" width="150" height="26" nowrap="nowrap">Author</th>
+		<th class="thRight" nowrap="nowrap">Message</th>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="48095"></a><b>ragnarok2040</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 09 Aug 2006<br />Posts: 230<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=48095#48095"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sat Nov 18, 2006 4:23 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: Tutorial: Setting up CodeBlocks for ps2dev</span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=48095"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"><span style="font-weight: bold">Goal</span>
+<br />
+This guide breaks down into two parts:
+<br />
+Setting up a ps2dev environment, for those who want to try this without ps2dev experience
+<br />
+Setting up CodeBlocks to compile ps2dev projects, works for Cygwin, MinGW, or precompiled toolchain users
+<br />
+
+<br />
+<span style="font-weight: bold">What you need for CodeBlocks</span> 
+<br />
+CodeBlocks, <a href="http://www.codeblocks.org/nightly" target="_blank">www.codeblocks.org/nightly</a>
+<br />
+Get the latest nightly build
+<br />
+These dlls are listed in each nightly build release thread: mingwm10.7z wxmsw26u_gcc_cb_wx2.6.3p2.7z
+<br />
+
+<br />
+<span style="font-weight: bold">What you need for ps2dev environment</span>
+<br />
+MinGW/MSYS, <a href="http://www.mingw.org" target="_blank">www.mingw.org</a>
+<br />
+Download MinGW-5.0.2.exe, it's an installer like Cygwin's
+<br />
+I have MSYS-1.0.11-2004.04.30-1.exe, which was the latest MSYS installer snapshot. 
+<br />
+This has all the commandline tools, make, sh, tar, gawk, sed, generally used in buildscripts/makefiles.
+<br />
+
+<br />
+ps2dev-project template, <a href="http://homebrew.thewaffleiron.net/ragnarok2040/ps2dev-project.7z" target="_blank">http://homebrew.thewaffleiron.net/ragnarok2040/ps2dev-project.7z</a>
+<br />
+This is a simple CodeBlocks project file for setting up ps2 projects, you should copy it into the same dir as a project's main Makefile
+<br />
+
+<br />
+A Subversion client to download ps2sdk/usb_mass
+<br />
+I used RapidSVN, <a href="http://rapidsvn.tigris.org/" target="_blank">http://rapidsvn.tigris.org/</a>
+<br />
+
+<br />
+<span style="font-weight: bold"><span style="text-decoration: underline">Setting up a ps2dev environment</span></span>
+<br />
+
+<br />
+<span style="font-weight: bold">MinGW Setup: </span>
+<br />
+Run MinGW-5.0.2.exe, it will go online to check the latest version of MinGW
+<br />
+Click Next, select a mirror near you in the list, select download and install Click Next
+<br />
+Click either Current or Candidate, Click Next
+<br />
+You want the MinGW base tools, and G++ checked, Click Next, and it will start downloading
+<br />
+Install to C:\MinGW
+<br />
+
+<br />
+<span style="font-weight: bold">MSYS setup: </span>
+<br />
+Install MSYS to C:\msys not C:\msys\1.0
+<br />
+Continue with the post-install, so put y and hit Enter.
+<br />
+Hit y and Enter when it asks if you have MinGW installed.
+<br />
+c:/mingw for your MinGW installation, Hit Enter to continue
+<br />
+All done.
+<br />
+
+<br />
+The colors for the terminal are set in msys.bat.
+<br />
+You can change LightYellow/Navy to Black/LightGrey so it resembled a more normal terminal window.
+<br />
+You can also add -norxvt to the MSYS shortcut on the desktop to start off with just a simple shell.
+<br />
+
+<br />
+<span style="font-weight: bold">Toolchain setup: </span>
+<br />
+Compile or Install a precompiled toolchain to /c/ps2dev or /opt/ps2dev
+<br />
+
+<br />
+Open up C:\msys\etc\profile and paste the following at the bottom:
+<br />
+export PS2DEV=&quot;/c/ps2dev&quot;
+<br />
+export PS2SDK=&quot;$PS2DEV/ps2sdk&quot;
+<br />
+export PATH=&quot;$PATH:$PS2DEV/bin:$PS2DEV/ee/bin:$PS2DEV/iop/bin:$PS2DEV/dvp/bin:$PS2SDK/bin&quot;
+<br />
+
+<br />
+This sets MSYS's environment up with all the ps2dev dependent variables for compiling with ps2sdk.
+<br />
+
+<br />
+<span style="font-weight: bold"><span style="text-decoration: underline">Setting up CodeBlocks</span></span>
+<br />
+
+<br />
+<span style="font-weight: bold">CodeBlocks setup:</span>
+<br />
+Extract the latest nightly build, mingwm10.7z, and wxmsw26u_gcc_cb_wx2.6.3p2.7z into C:\Program Files\CodeBlocks
+<br />
+Right click codeblocks.exe and click Send To-&gt;Desktop (create shortcut), if you want, you can rename the shortcut CodeBlocks.
+<br />
+
+<br />
+Start CodeBlocks, if you get the following error
+<br />
+&quot;Can not enumerate files in directory: 'C:\Documents and Settings\&lt;username&gt;\Application Data\codeblocks/share/codeblocks/plugins' (error 3: the system can not find the file specified.)&quot;
+<br />
+You just need to create that plugins folder.
+<br />
+
+<br />
+You can go to Settings-&gt;Environment, and enable file associations, if you want. 
+<br />
+If you wish to retain your file associations for source files. Click Manage... and just have .cbp and .workspace checked before doing anything
+<br />
+
+<br />
+<span style="font-weight: bold">Compiler Setup:</span>
+<br />
+Inside CodeBlocks
+<br />
+Go to Settings-&gt; Environment
+<br />
+Scroll down to Environment variables and click on the icon
+<br />
+Add the following:
+<br />
+Key: PS2DEV
+<br />
+Value: C:/ps2dev (for Cygwin users, change that to your ps2dev dir) it needs forward /'s
+<br />
+
+<br />
+Key: PS2SDK
+<br />
+Value: $(PS2DEV)/ps2sdk
+<br />
+Click the Add now (or Set now) button, Click OK
+<br />
+
+<br />
+Go to Settings-&gt; Compiler and debugger settings
+<br />
+
+<br />
+Select GNU GCC Compiler in the dropdown box at the top, and click the Copy button.
+<br />
+Put PS2 GCC Compiler in the Input box and click OK.
+<br />
+Select the PS2 GCC Compiler in the dropdown list
+<br />
+
+<br />
+For MinGW users, CodeBlocks has all the MinGW directories configured by default
+<br />
+For Cygwin users, <a href="http://wiki.codeblocks.org/index.php?title=Installing_Cygwin_Compiler" target="_blank">http://wiki.codeblocks.org/index.php?title=Installing_Cygwin_Compiler</a>
+<br />
+
+<br />
+The programs should be setup like this (both MinGW and Cygwin):
+<br />
+
+<br />
+<span style="text-decoration: underline">Toolchain executables</span>
+<br />
+C Compiler: gcc.exe (or mingw-gcc.exe)
+<br />
+C++ Compiler: g++.exe (or mingw-g++.exe)
+<br />
+Linker for dynamic libs: g++.exe (or mingw-g++.exe)
+<br />
+Linker for static libs: ar.exe
+<br />
+Debugger: gdb.exe
+<br />
+Resource compiler: windres.exe
+<br />
+Make program: make.exe
+<br />
+
+<br />
+<span style="text-decoration: underline">Additional Paths tab</span>
+<br />
+C:\msys\bin
+<br />
+C:\ps2dev\ee\bin
+<br />
+C:\ps2dev\iop\bin
+<br />
+C:\ps2dev\dvp\bin
+<br />
+C:\ps2dev\ps2sdk\bin
+<br />
+C:\ps2dev\bin
+<br />
+
+<br />
+Cygwin users can change those to their relevant paths, they don't need C:\msys\bin
+<br />
+
+<br />
+<span style="font-weight: bold">Example project setup:</span>
+<br />
+Get the usb_mass source from ps2dev's subversion repository, this was my test project as it had separate iop and ee projects.
+<br />
+
+<br />
+Copy the ps2dev.cbp into the ee folder. For any ps2 project, you want the .cbp file in the same directory as the main makefile for the project, as it keeps the same relative paths in CodeBlocks when you do that.
+<br />
+
+<br />
+ You can rename it to mass_example.cbp, then doubleclick it 
+<br />
+
+<br />
+Configuring project for compiling:
+<br />
+Right-click the project, ps2dev, in Codeblocks, click Properties, replace the ps2dev title with whatever you want, I chose mass_example.
+<br />
+Right-clik the project, click Add files recursively... and select the ee dir (should already be selected since that's whare the .cbp is). Make sure all the source files are checked, plus the Makefile
+<br />
+
+<br />
+You should now see:
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">-#usb_mass
+<br />
+&nbsp; - Sources
+<br />
+&nbsp; &nbsp; &nbsp; mass_example.c
+<br />
+&nbsp; &nbsp; &nbsp; mass_rpc.c
+<br />
+&nbsp; + Headers
+<br />
+&nbsp; + Others</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+<span style="font-weight: bold">Building:</span>
+<br />
+Right-click the Project name and click Build, you should get some warning messages, but it should complete without errors. Cygwin users/Cygwin-based toolchain users, if there are no line numbers or filenames with the warning messages, please read below.
+<br />
+
+<br />
+You can also put a fresh copy of ps2dev.cbp into the iop folder, add the files recursively from the iop folder, click Build, it will compile, too.
+<br />
+
+<br />
+<span style="font-weight: bold"><span style="text-decoration: underline">Cygwin-hosted toolchain users</span></span>
+<br />
+For those with Cygwin or those with a toolchain from a cygwin-hosted ps2dev environment installer (needs cygwin1.dll), CodeBlocks' regex's didn't capture GCC's output correctly for me
+<br />
+If, when compiling mass_example, the warnings in the Build messages box do not have line numbers or file names listed, then do the following:
+<br />
+
+<br />
+Open CodeBlocks, go to Settings-&gt; Compiler and debugger settings
+<br />
+Select the PS2 GCC Compiler from the dropdown list
+<br />
+Click the Other tab, click Advanced options..., you will get a warning about the ramifications of changing things and asks if you wish to continue, make sure you have the PS2 GCC Compiler selected, and click Yes
+<br />
+Click the Output Parsing tab
+<br />
+For the following, you need to replace the regex's with ones that can parse the cygwin-hosted gcc output. The messages under Testing: are example warnings/errors. Paste them into the Test string box, you should get a dialog with everything parsed correctly.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">
+<br />
+Click Compiler warning
+<br />
+Replace 
+<br />
+&#40;&#91; \tA-Za-z0-9_&#58;+/\.-&#93;+&#41;&#58;&#40;&#91;0-9&#93;+&#41;&#58;&#91; \t&#93;&#40;&#91;Ww&#93;arning&#58;&#91; \t&#93;.*&#41;
+<br />
+with
+<br />
+&#40;&#91; \tA-Za-z0-9_&#58;+/\.-&#93;+&#41;\&#40;&#40;&#91;0-9&#93;+&#41;\&#41;&#91; \t&#93;&#58;&#91; \t&#93;&#40;&#91;Ww&#93;arning&#58;&#91; \t&#93;.*&#41;
+<br />
+
+<br />
+Testing
+<br />
+main.c&#58;38&#58; warning&#58; implicit declaration of function `InitPS2'
+<br />
+main.c&#40;38&#41; &#58; warning&#58; implicit declaration of function `InitPS2'
+<br />
+
+<br />
+Click Compiler error
+<br />
+Replace
+<br />
+&#40;&#91; \tA-Za-z0-9_&#58;+/\.-&#93;+&#41;&#58;&#40;&#91;0-9&#93;+&#41;&#58;&#91; \t&#93;&#40;.*&#41;
+<br />
+with
+<br />
+&#40;&#91; \tA-Za-z0-9_&#58;+/\.-&#93;+&#41;\&#40;&#40;&#91;0-9&#93;+&#41;\&#41;&#91; \t&#93;&#58;&#91; \t&#93;&#40;.*&#41;
+<br />
+
+<br />
+Testing&#58;
+<br />
+init.c&#58;80&#58; parse error before '*' token
+<br />
+init.c&#40;80&#41; &#58; parse error before '*' token
+<br />
+
+<br />
+Click Linker error &#40;lib not found&#41;
+<br />
+Replace 
+<br />
+.*&#40;ld.exe&#41;&#58;&#91; \t&#93;&#40;cannot find.*&#41;
+<br />
+with
+<br />
+.*&#40;ld&#41;&#58;&#91; \t&#93;&#40;cannot find.*&#41;
+<br />
+
+<br />
+Testing&#58;
+<br />
+C&#58;\ps2dev\ee\bin\..\lib\gcc-lib\ee\3.2.2\..\..\..\..\ee\bin\ld.exe&#58; cannot find -ldmkit
+<br />
+/cygdrive/c/ps2dev/ee/bin/../lib/gcc-lib/ee/3.2.2/../../../../ee/bin/ld&#58; cannot find -ldmkit</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Now CodeBlocks should catch warnings and errors correctly, allowing you to jump straight to where said warning/error occurred from the Build messages box.
+<br />
+
+<br />
+<span style="font-weight: bold">Updating PS2SDK:</span>
+<br />
+Get the latest ps2sdk's source from ps2dev's svn repository.
+<br />
+
+<br />
+<span style="font-weight: bold">Comments</span>
+<br />
+Ok, I've spent a few days creating this guide, I'm pretty sure I've caught anything that might mess CodeBlocks up with setting it up with a ps2dev environment on any platform. As for Linux users, there is an Ubuntu edgy nightly build, but I'm not familiar with it, but you can probably figure out how to set it up from this guide.</span><span class="gensmall"><br /><br />Last edited by ragnarok2040 on Sat Jan 23, 2010 10:13 pm; edited 10 times in total</span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="48537"></a><b>sincodes</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 13 Sep 2006<br />Posts: 2<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=48537#48537"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sun Dec 03, 2006 4:18 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: assembly source</span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=48537"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hi, 
+<br />
+
+<br />
+I am having problem on compiling assembly source by using CodeBlock. Anyone could help?</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=7211"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=7211"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="48565"></a><b>J.F.</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 22 Feb 2004<br />Posts: 2906<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=48565#48565"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Dec 04, 2006 8:59 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=48565"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Really nice guide! I was just getting set to setup CB to do this and the guide really came in handy. Thanks!
+<br />
+
+<br />
+I run Fedora Core 6 for the x86_64. You can use the guide almost straight, but a few changes need to be made...
+<br />
+
+<br />
+Make sure the extras repo is added. You should have added it during install, but in case you didn't, here's how:
+<br />
+
+<br />
+Open a terminal and go into superuser mode.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">su -</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Import the key for the extras repo.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">rpm --import http&#58;//download.fedora.redhat.com/pub/fedora/linux/extras/RPM-GPG-KEY-Fedora-Extras</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Save the following as &quot;/etc/yum.repos.d/fedora-extras.repo&quot;
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">&#91;extras&#93;
+<br />
+name=Fedora Extras $releasever - $basearch
+<br />
+#baseurl=http&#58;//download.fedora.redhat.com/pub/fedora/linux/extras/$releasever/$basearch/
+<br />
+mirrorlist=http&#58;//mirrors.fedoraproject.org/mirrorlist?repo=extras-$releasever&amp;arch=$basearch
+<br />
+enabled=1
+<br />
+gpgkey=file&#58;///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+<br />
+gpgcheck=1
+<br />
+
+<br />
+&#91;extras-debuginfo&#93;
+<br />
+name=Fedora Extras $releasever - $basearch - Debug
+<br />
+#baseurl=http&#58;//download.fedora.redhat.com/pub/fedora/linux/extras/$releasever/$basearch/debug/
+<br />
+mirrorlist=http&#58;//mirrors.fedoraproject.org/mirrorlist?repo=extras-debug-$releasever&amp;arch=$basearch
+<br />
+enabled=0
+<br />
+gpgkey=file&#58;///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+<br />
+gpgcheck=1
+<br />
+
+<br />
+&#91;extras-source&#93;
+<br />
+name=Fedora Extras $releasever - Source
+<br />
+#baseurl=http&#58;//download.fedora.redhat.com/pub/fedora/linux/extras/$releasever/SRPMS/
+<br />
+mirrorlist=http&#58;//mirrors.fedoraproject.org/mirrorlist?repo=extras-source-$releasever&amp;arch=$basearch
+<br />
+enabled=0
+<br />
+gpgkey=file&#58;///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+<br />
+gpgcheck=1
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+If you haven't already, install the Smart Package Manager. It's the best package manager you can use with Fedora Core, and it's in the extras repo.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">yum install smart smart-gui smart-update</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Now you can use Smart to install packages with a click of the button. Open Smart (it's in the Gnome Menus under System Tools) and click okay for all the repos it asks about (only does this the first time you open it). Check gcc34 and g++34 for installation. The ps2dev toolchain won't compile under gcc 4.1 included with FC6. Check CodeBlocks for installation (yes, CodeBlocks is in the FC6 extras repo!). Check 7zip for installation. Note - if you're having trouble finding them, use the search feature in Smart. Check subversion for installation. Click the apply button to download and install the above and any dependencies.
+<br />
+
+<br />
+Now back to the terminal. If you've never made the ps2dev toolchain before, you need to make the directory explicitly for some reason.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">mkdir -p /usr/local/ps2dev</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Set up a few temporary environment variables. These will vanish when you close the terminal. If you wish to always have them, add them to .bash_profile.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">export PS2DEV=&quot;/usr/local/ps2dev&quot;
+<br />
+export PS2SDK=&quot;$PS2DEV/ps2sdk&quot;
+<br />
+export PATH=&quot;$PATH&#58;$PS2DEV/bin&#58;$PS2DEV/ee/bin&#58;$PS2DEV/iop/bin&#58;$PS2DEV/dvp/bin&#58;$PS2SDK/bin&quot;</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Now change directories to where you want to put all the junk the toolchain script uses during the toolchain building process.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">cd /tmp</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Checkout the ps2 toolchain.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">svn co svn&#58;//svn.ps2dev.org/ps2/trunk/ps2toolchain</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Go into that directory and run the toolchain. Don't forget to use gcc 3.4!
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">cd ps2toolchain
+<br />
+CC=gcc34 ./toolchain.sh</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+Once it's done, you should have a full ps2 toolchain and ps2sdk in /usr/local/ps2dev.
+<br />
+
+<br />
+Now go into CodeBlocks and set the environment variables as shown in the guide, except that PS2DEV is set to &quot;/usr/local/ps2dev&quot; instead of what he shows. PS2SDK is the same since it's set relative to PS2DEV. Note that setting these environment variables here means you DON'T need to set them in .bash_profile unless you intend to use the terminal to compile stuff. If you just stick to CB, don't bother.
+<br />
+
+<br />
+Follow the guide until you reach the part about setting the PS2 GCC Compiler Program Files tab. Leave them set as they are with the exception of changing gcc to gcc34, and g++ to g++34. In the Additional Paths tab, add the following.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">/usr/local/ps2dev/ee/bin
+<br />
+/usr/local/ps2dev/iop/bin
+<br />
+/usr/local/ps2dev/dvp/bin
+<br />
+/usr/local/ps2dev/ps2sdk/bin
+<br />
+/usr/local/ps2dev/bin</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+To unarc the project file linked to in the guide, use this:
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">7za x ps2dev-project.7z</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+The rest is like the guide, but CB had no trouble capturing GCC's output, so the part about setting CB to capture CygWin output doesn't apply. Note that all of the above applies equally well to the PSP toolchain! The main difference is that gcc 4.1 will compile the PSP toolchain fine - no need for gcc 3.4, and you don't need to create /usr/local/pspdev first, nor set the environment vars before compiling the psp toolchain.
+<br />
+
+<br />
+Hope this helps folks wishing to try it under linux. Other distros should be pretty similar, but you might not have CodeBlocks in a handy repository.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=104"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=104"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=jlfenton65&amp;message=Hello+Are+you+there?"><img src="templates/subSilver/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="48574"></a><b>ragnarok2040</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 09 Aug 2006<br />Posts: 230<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=48574#48574"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Dec 04, 2006 10:34 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=48574"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Nice, thanks J.F.
+<br />
+
+<br />
+sincodes:
+<br />
+
+<br />
+Make sure you have a rule like:
+<br />
+
+<br />
+something_assembly.o: something_assembly.s
+<br />
+
+<br />
+in your Makefile, and include $PS2SDK/samples/Makefile.pref and $PS2SDK/samples/Makefile.eeglobal or .iopglobal depending on your project. They have the %.o: %.s rule for compiling assembly into object files.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="48576"></a><b>J.F.</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 22 Feb 2004<br />Posts: 2906<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=48576#48576"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Dec 04, 2006 11:36 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=48576"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>ragnarok2040 wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">Nice, thanks J.F.</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+No problem. I was making .cbp files for SMS when I noticed that some folks will need another environment variable: PS2SDKSRC needs to be set to where you have checked out the source for the SDK. This is for when projects make their own custom IRXs instead of just using the normal ones. In my case, it's
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">PS2SDKSRC=~/projects/sony/ps2/trunk/ps2sdk</td>	</tr></table><span class="postbody"></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=104"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=104"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>   <a href="aim:goim?screenname=jlfenton65&amp;message=Hello+Are+you+there?"><img src="templates/subSilver/images/lang_english/icon_aim.gif" alt="AIM Address" title="AIM Address" border="0" /></a>  <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="52826"></a><b>n2liquid</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 02 Jan 2007<br />Posts: 4<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=52826#52826"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Apr 09, 2007 12:11 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=52826"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">First, hi there folks.
+<br />
+
+<br />
+I'm new here, sorry if I am beginning.
+<br />
+Well, I did everything just as said on this tutorial(thx ragnarok2040), but when I try to compile, the compiler is not able to find sifrpc.h, and of course, a bunch of declaration errors follow it.
+<br />
+
+<br />
+Here it is&gt;
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">C&#58;\ps2dev\ee\mass_rpc.c&#58;15&#58; sifrpc.h&#58; No such file or directory
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;21&#58; error&#58; syntax error before &quot;client&quot;
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;21&#58; warning&#58; type defaults to `int' in declaration of `client'
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;21&#58; warning&#58; data definition has no type or storage class
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;40&#58; warning&#58; implicit declaration of function `SifBindRpc'
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;44&#58; error&#58; request for member `server' in something not a structure or union
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;62&#58; warning&#58; implicit declaration of function `SifCallRpc'
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;66&#58; warning&#58; implicit declaration of function `memcpy'
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;21&#58; warning&#58; alignment of 'client' is greater than maximum object file alignment.&nbsp; Using 16
+<br />
+C&#58;\ps2dev\ee\mass_rpc.c&#58;22&#58; warning&#58; alignment of 'rpcBuffer' is greater than maximum object file alignment.&nbsp; Using 16
+<br />
+&#58;&#58; === Build finished&#58; 3 errors, 7 warnings ===</td>	</tr></table><span class="postbody">
+<br />
+
+<br />
+I didn't update ps2dev sdk, I wonder if it's because of that..</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=8217"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=8217"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="53199"></a><b>cosmito</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 04 Mar 2007<br />Posts: 316<br />Location: Portugal</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=53199#53199"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Tue Apr 17, 2007 10:43 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=53199"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hmm interesting the Code Block thing.
+<br />
+
+<br />
+I'm going to try as soon I have some time.
+<br />
+
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">The ps2dev toolchain won't compile under gcc 4.1</td>	</tr></table><span class="postbody">
+<br />
+Aha! I knew it (well, suspect it :) )</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://ps2homebrewing.wordpress.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="55508"></a><b>cosmito</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 04 Mar 2007<br />Posts: 316<br />Location: Portugal</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=55508#55508"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Jul 02, 2007 1:46 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=55508"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">Hi
+<br />
+
+<br />
+the ps2dev-project template cannot be found at <a href="http://d.turboupload.com/d/1222919/ps2dev-project.7z.html" target="_blank" class="postlink">http://d.turboupload.com/d/1222919/ps2dev-project.7z.html</a> ...
+<br />
+
+<br />
+Could you please host it again and/or send me a copy ?
+<br />
+Thanks</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://ps2homebrewing.wordpress.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="67672"></a><b>kouky</b></span><br /><span class="postdetails"><br /><img src="http://www.pikilipita.com/panda64.gif" alt="" border="0" /><br /><br />Joined: 25 Sep 2007<br />Posts: 48<br />Location: London</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=67672#67672"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Apr 14, 2008 1:12 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=67672"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">As ptek
+<br />
+
+<br />
+I can't download the project template,
+<br />
+could you please update the hosting?
+<br />
+
+<br />
+Thank you :)</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=10614"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=10614"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.pikilipita.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="67677"></a><b>kouky</b></span><br /><span class="postdetails"><br /><img src="http://www.pikilipita.com/panda64.gif" alt="" border="0" /><br /><br />Joined: 25 Sep 2007<br />Posts: 48<br />Location: London</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=67677#67677"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Apr 14, 2008 2:41 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=67677"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">I've nearly done all the steps, but can't find your &quot;usb_mass source&quot;,
+<br />
+
+<br />
+should it be in <a href="http://svn.ps2dev.org/" target="_blank">http://svn.ps2dev.org/</a> ??
+<br />
+this URL return me a forbidden 403 error...</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=10614"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=10614"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://www.pikilipita.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="67680"></a><b>cosmito</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 04 Mar 2007<br />Posts: 316<br />Location: Portugal</span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=67680#67680"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Apr 14, 2008 3:13 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=67680"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>kouky wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">As ptek
+<br />
+
+<br />
+I can't download the project template,
+<br />
+could you please update the hosting?
+<br />
+
+<br />
+Thank you :)</td>	</tr></table><span class="postbody">
+<br />
+In the meanwhile, I mirrored here :
+<br />
+<a href="http://www.4shared.com/file/43976115/3cafebef/ps2dev.html" target="_blank">http://www.4shared.com/file/43976115/3cafebef/ps2dev.html</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://ps2homebrewing.wordpress.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="67682"></a><b>cosmito</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 04 Mar 2007<br />Posts: 316<br />Location: Portugal</span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=67682#67682"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Mon Apr 14, 2008 3:17 am<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=67682"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody"></span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>kouky wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">I've nearly done all the steps, but can't find your &quot;usb_mass source&quot;,
+<br />
+
+<br />
+should it be in <a href="http://svn.ps2dev.org/" target="_blank">http://svn.ps2dev.org/</a> ??
+<br />
+this URL return me a forbidden 403 error...</td>	</tr></table><span class="postbody">
+<br />
+Point your SVN client to <a href="svn://svn.ps2dev.org/ps2/trunk/usb_mass/" target="_blank">svn://svn.ps2dev.org/ps2/trunk/usb_mass/</a></span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=8970"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>  <a href="http://ps2homebrewing.wordpress.com" target="_userwww"><img src="templates/subSilver/images/lang_english/icon_www.gif" alt="Visit poster's website" title="Visit poster's website" border="0" /></a>   <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="70746"></a><b>superfrog12</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 22 Jun 2008<br />Posts: 14<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=70746#70746"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sat Jun 28, 2008 7:22 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=70746"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">hi,
+<br />
+
+<br />
+I am trying to set up CodeBlocks for PS2SDK but when I try to build a project I get
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">
+<br />
+/samples/Makefile.pref No such file or directory
+<br />
+/samples/Makefile.eeglobal No such file or directory
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+the corresponding lines in my makefile are
+<br />
+</span><table width="90%" cellspacing="1" cellpadding="3" border="0" align="center"><tr> 	  <td><span class="genmed"><b>Quote:</b></span></td>	</tr>	<tr>	  <td class="quote">include $(PS2SDK)/samples/Makefile.pref
+<br />
+include $(PS2SDK)/samples/Makefile.eeglobal
+<br />
+</td>	</tr></table><span class="postbody">
+<br />
+I am using version 8.0.2 of CodeBlocks and there is no such option as Settings-&gt;Environment anymore. I added the PS2DEV and PS2SDK environment variables under Settings-&gt;Compiler and debugger in the &quot;PS2 GCC Compiler&quot; tab under &quot;custom variables&quot;. Do I need to add them some other place?
+<br />
+
+<br />
+thank you</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=12315"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=12315"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="70750"></a><b>ragnarok2040</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 09 Aug 2006<br />Posts: 230<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=70750#70750"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sat Jun 28, 2008 8:07 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=70750"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">It's still there on the latest builds and on 8.02, Settings-&gt;Environment which pops open with the General Settings tab selected. You scroll down to Environment variables and you can set them up there. I checked using 8.02 and svn build 5102 built on Jun 22, 2008.
+<br />
+
+<br />
+The &quot;Custom variables&quot; under the &quot;Compilers and debuggers&quot; menu are for use when Codeblocks invokes the compiler or linker and you want to use a variable to replace some options or something instead of defining them manually and they don't affect the environment from which make is called.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row1"><span class="name"><a name="70754"></a><b>superfrog12</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 22 Jun 2008<br />Posts: 14<br /></span><br /></td>
+		<td class="row1" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=70754#70754"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sat Jun 28, 2008 8:27 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=70754"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">oh you are right! I wasn't using the nightly build. the option is missing in the stable build.
+<br />
+
+<br />
+thanks</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row1" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row1" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=12315"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=12315"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr>
+		<td width="150" align="left" valign="top" class="row2"><span class="name"><a name="70762"></a><b>ragnarok2040</b></span><br /><span class="postdetails"><br /><br /><br />Joined: 09 Aug 2006<br />Posts: 230<br /></span><br /></td>
+		<td class="row2" width="100%" height="28" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="100%"><a href="viewtopic.php?p=70762#70762"><img src="templates/subSilver/images/icon_minipost.gif" width="12" height="9" alt="Post" title="Post" border="0" /></a><span class="postdetails">Posted: Sat Jun 28, 2008 10:54 pm<span class="gen">&nbsp;</span>&nbsp; &nbsp;Post subject: </span></td>
+				<td valign="top" nowrap="nowrap"><a href="posting.php?mode=quote&amp;p=70762"><img src="templates/subSilver/images/lang_english/icon_quote.gif" alt="Reply with quote" title="Reply with quote" border="0" /></a>   </td>
+			</tr>
+			<tr>
+				<td colspan="2"><hr /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><span class="postbody">That's weird :?, Perhaps the plugin went missing or was disabled somehow. If you have the problem in the future, you can check Plugins-&gt;Manage Plugins and see if the Environment variables plugin is disabled. Reinstalling CodeBlocks with a nightly build was the better option, I think :D, since they're always fixing bugs.</span><span class="gensmall"></span></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="row2" width="150" align="left" valign="middle"><span class="nav"><a href="#top" class="nav">Back to top</a></span></td>
+		<td class="row2" width="100%" height="28" valign="bottom" nowrap="nowrap"><table cellspacing="0" cellpadding="0" border="0" height="18" width="18">
+			<tr>
+				<td valign="middle" nowrap="nowrap"><a href="profile.php?mode=viewprofile&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_profile.gif" alt="View user's profile" title="View user's profile" border="0" /></a> <a href="privmsg.php?mode=post&amp;u=6956"><img src="templates/subSilver/images/lang_english/icon_pm.gif" alt="Send private message" title="Send private message" border="0" /></a>     <script language="JavaScript" type="text/javascript"><!--
+
+	if ( navigator.userAgent.toLowerCase().indexOf('mozilla') != -1 && navigator.userAgent.indexOf('5.') == -1 && navigator.userAgent.indexOf('6.') == -1 )
+		document.write(' ');
+	else
+		document.write('</td><td>&nbsp;</td><td valign="top" nowrap="nowrap"><div style="position:relative"><div style="position:absolute"></div><div style="position:absolute;left:3px;top:-1px"></div></div>');
+
+				//--></script><noscript></noscript></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+		<td class="spaceRow" colspan="2" height="1"><img src="templates/subSilver/images/spacer.gif" alt="" width="1" height="1" /></td>
+	</tr>
+	<tr align="center">
+		<td class="catBottom" colspan="2" height="28"><table cellspacing="0" cellpadding="0" border="0">
+			<tr><form method="post" action="viewtopic.php?t=6995&amp;start=0">
+				<td align="center"><span class="gensmall">Display posts from previous: <select name="postdays"><option value="0" selected="selected">All Posts</option><option value="1">1 Day</option><option value="7">7 Days</option><option value="14">2 Weeks</option><option value="30">1 Month</option><option value="90">3 Months</option><option value="180">6 Months</option><option value="364">1 Year</option></select>&nbsp;<select name="postorder"><option value="asc" selected="selected">Oldest First</option><option value="desc">Newest First</option></select>&nbsp;<input type="submit" value="Go" class="liteoption" name="submit" /></span></td>
+			</form></tr>
+		</table></td>
+	</tr>
+</table>
+
+<table width="100%" cellspacing="2" cellpadding="2" border="0" align="center">
+  <tr>
+	<td align="left" valign="middle" nowrap="nowrap"><span class="nav"><a href="posting.php?mode=newtopic&amp;f=11"><img src="templates/subSilver/images/lang_english/post.gif" border="0" alt="Post new topic" align="middle" /></a>&nbsp;&nbsp;&nbsp;<a href="posting.php?mode=reply&amp;t=6995"><img src="templates/subSilver/images/lang_english/reply.gif" border="0" alt="Reply to topic" align="middle" /></a></span></td>
+	<td align="left" valign="middle" width="100%"><span class="nav">&nbsp;&nbsp;&nbsp;<a href="index.php" class="nav">forums.ps2dev.org Forum Index</a>
+	  -> <a href="viewforum.php?f=11" class="nav">PS2 Development</a></span></td>
+	<td align="right" valign="top" nowrap="nowrap"><span class="gensmall">All times are GMT + 10 Hours</span><br /><span class="nav"></span>
+	  </td>
+  </tr>
+  <tr>
+	<td align="left" colspan="3"><span class="nav">Page <b>1</b> of <b>1</b></span></td>
+  </tr>
+</table>
+
+<table width="100%" cellspacing="2" border="0" align="center">
+  <tr>
+	<td width="40%" valign="top" nowrap="nowrap" align="left"><span class="gensmall"></span><br />
+	  &nbsp;<br />
+	  </td>
+	<td align="right" valign="top" nowrap="nowrap">
+<form method="get" name="jumpbox" action="viewforum.php" onSubmit="if(document.jumpbox.f.value == -1){return false;}"><table cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td nowrap="nowrap"><span class="gensmall">Jump to:&nbsp;<select name="f" onchange="if(this.options[this.selectedIndex].value != -1){ forms['jumpbox'].submit() }"><option value="-1">Select a forum</option><option value="-1">&nbsp;</option><option value="-1">Forum Administration</option><option value="-1">----------------</option><option value="2">Announcements</option><option value="31">Patch Submissions</option><option value="1">General Discussion</option><option value="22">Help Wanted Requests</option><option value="16">The Incredible Hall Of Shame</option><option value="-1">&nbsp;</option><option value="-1">Development Forums</option><option value="-1">----------------</option><option value="32">PS1 Development</option><option value="11"selected="selected">PS2 Development</option><option value="25">PS3 Development</option><option value="27">PS3 Linux Development</option><option value="14">PSP Development</option><option value="21">PSP Lua Player Development</option><option value="28">Other Development</option><option value="-1">&nbsp;</option><option value="-1">Project Forums</option><option value="-1">----------------</option><option value="29">spu-medialib</option></select><input type="hidden" name="sid" value="1ae293f4b711bf38dc7d8867ba7a99da" />&nbsp;<input type="submit" value="Go" class="liteoption" /></span></td>
+	</tr>
+</table></form>
+
+<span class="gensmall">You <b>cannot</b> post new topics in this forum<br />You <b>cannot</b> reply to topics in this forum<br />You <b>cannot</b> edit your posts in this forum<br />You <b>cannot</b> delete your posts in this forum<br />You <b>cannot</b> vote in polls in this forum<br /></span></td>
+  </tr>
+</table>
+
+
+<div align="center"><span class="copyright"><br /><br />
+<!--
+	We request you retain the full copyright notice below including the link to www.phpbb.com.
+	This not only gives respect to the large amount of time given freely by the developers
+	but also helps build interest, traffic and use of phpBB 2.0. If you cannot (for good
+	reason) retain the full copyright we request you at least leave in place the
+	Powered by phpBB line, with phpBB linked to www.phpbb.com. If you refuse
+	to include even this then support on our forums may be affected.
+
+	The phpBB Group : 2002
+// -->
+Powered by <a href="http://www.phpbb.com/" target="_phpbb" class="copyright">phpBB</a> &copy; 2001, 2005 phpBB Group<br /></span></div>
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

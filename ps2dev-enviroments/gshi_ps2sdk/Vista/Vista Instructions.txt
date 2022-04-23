@@ -1,0 +1,27 @@
+These instructions were originally given by chp of PS2Dev.org, and detail a few modifications that must be made in order to use msys/MinGW in Vista. To simplify the process (and avoid the issues that might arise if the download link later becomes a dead one), I've included the new msys-1.0.dll; just place it in the bin directory, as instructed:
+
+_______________________________________________________
+
+To get it building under Vista (x86, haven't tested x64), you need to do a few things:
+
+First, you need to use candidate instead of current for reasons that come later. If you have installed with current, uninstall and install again with candidate, and follow Lukasz's instructions as normal.
+
+Then, download a new msys-1.0.dll, this will get rid of the heap-issues for all msys binaries:
+
+http://prdownloads.sf.net/mingw/msys-1.0.dll-SNAP-1.0.11-2006.04.23.tar.bz2?download
+
+Decompress this with something like WinRAR which supports bzip2 archives, then rename new-msys-1.0.dll to msys-1.0.dll and copy it into C:\msys\1.0\bin (or wherever you installed msys).
+
+After that, go into C:\msys\1.0\postinstall\ and run pi.bat to get the postinstall step properly executed, since it never ran when you first installed (complaining about issues with cygwin heap).
+
+When all of this is done, here's the reason for using candidate. Download http://dessent.net/tmp/gcc-vista-3.4.5-20060117-1.tar.gz and decompress into your MinGW folder. This is to get rid of a nasty bug that causes GCC to not find the compiled backend. (perhaps this file should be given local hosting so we don't exploit some poor souls bandwidth?)
+
+You should now be able to compile ps2toolchain in MinGW under Vista. You do however need to do this in a slightly different fashion than described. To not get build-errors halfway through, instead of:
+Code:
+sh toolchain.sh
+you write:
+Code:
+CFLAGS="-D__USE_MINGW_ACCESS" sh toolchain.sh
+NOTE:Even if you build this on XP but intend to use the toolchain under Vista you still need to pass this flag due to a bug with the normal access() called by the gcc frontend.
+
+All done!

@@ -1,0 +1,1 @@
+ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd
