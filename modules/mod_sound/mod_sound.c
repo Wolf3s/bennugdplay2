@@ -38,6 +38,17 @@
 
 #include <SDL.h>
 
+#include <SDL_thread.h>//Masteries
+#include <SDL_timer.h>//Masteries
+#include <kernel.h>//Masteries, EE threads
+
+//Masteries, para la vibración del mando
+#include <tamtypes.h>
+#include <kernel.h>
+#include <sifrpc.h>
+#include "libpad.h"
+//Fin includes vibración
+
 #include "SDL_mixer.h"
 
 #include "files.h"
@@ -48,6 +59,27 @@
 /* --------------------------------------------------------------------------- */
 
 static int audio_initialized = 0 ;
+
+/*
+int global_id;//Masteries
+int global_loops;
+int global_channel;
+int global_play_return[8];//Masteries,up to 8 simultaneos audio channels
+int global_channel_cnt=0;
+*/
+
+//Masteries, para la vibración del mando
+#define SMALL_ACT 0
+#define BIG_ACT 1
+//static char padBuf[256] __attribute__((aligned(64)));
+
+static char actAlign[6];
+//static int actuators;
+
+//unsigned char actuator;
+//unsigned char actuator_time;
+
+void play_dualshock();//Masteries, using the dualshock 2 actuators
 
 /* --------------------------------------------------------------------------- */
 
@@ -185,9 +217,13 @@ static int sound_init()
 #ifdef TARGET_WII
         audio_buffers = 1024;
 #else
-        audio_buffers = 1024 * audio_rate / 22050;
-#endif
-
+        //audio_buffers = 1024 * audio_rate / 22050;
+        audio_buffers = 192; //Masteries, trying to fix SDL mixer audio issues in PlayStation 2
+#endif                       //The audio thread will mix very little amount of data, requiring
+                             //litte computation per iteration, but too many iterations per second,
+                             //the audio thread has 1 ms per iteration;
+                             //Now, audio thread works like a control thread in a Real-Time embedded kernel!
+                             //128   192
         /* Open the audio device */
         if ( Mix_OpenAudio( audio_rate, audio_format, audio_channels, audio_buffers ) >= 0 )
         {
@@ -543,11 +579,89 @@ static int load_wav( const char * filename )
  *
  */
 
+
 static int play_wav( int id, int loops, int channel )
 {
+    if(loops>99)//Masteries, special PlayStation 2 commands
+      {                          //Use Dualshock 2 Actuators
+           if(loops==120)//Small actuator
+             {
+             actAlign[0] = 0; //Stop small engine
+             padSetActDirect(0, 0, actAlign);
+             }
+            if(loops==130)
+             {
+             actAlign[1] = 0;  //Stop big engine
+             padSetActDirect(0, 0, actAlign);
+             }
+            if(loops==121)//Small actuator
+             {
+             actAlign[0] = 1; //Start small engine
+             padSetActDirect(0, 0, actAlign);
+             }
+           if(loops>130 & loops<151)//Big actuator
+             {
+             actAlign[1] = (loops-130)*12;  //Start big engine
+             padSetActDirect(0, 0, actAlign);
+             }
+      return ( 0 );
+      }
+    else
+      {
     if ( audio_initialized && id ) return ( ( int ) Mix_PlayChannel( channel, ( Mix_Chunk * )id, loops ) );
     return ( -1 );
+      }
 }
+
+
+/*
+// Very simple play_wav thread, Masteries
+int play_wav_thread( void *ptr )
+{
+    if ( audio_initialized && global_id )
+    {
+    global_play_return[global_channel_cnt]=( ( int ) Mix_PlayChannel( global_channel, ( Mix_Chunk * )global_id, global_loops ) );
+    return global_play_return[global_channel_cnt];
+    }
+    else
+    {
+    return ( -1 );
+    }
+
+}
+*/
+
+/*
+//Masteries, fix the SDL mixer issues
+static int play_wav( int id, int loops, int channel )
+{
+    //Masteries
+    struct t_ee_thread soundThread;
+    int soundThreadId;
+
+    global_id=id;
+    global_loops=loops;
+    global_channel=channel;
+    global_play_return[global_channel_cnt]=0;
+
+    soundThread.status = 0;
+    soundThread.func = (void*)play_wav_thread;
+    soundThread.stack = (void*)((int*)malloc(0x2000) + 0x2000 - 4);//(void*)((int*)malloc(0x800) + 0x800 - 4)
+    soundThread.initial_priority = 0x01;//Masteries, priority 64 decimal
+
+    //Masteries, start the sound thread
+    soundThreadId = CreateThread( &soundThread );
+    StartThread( soundThreadId, NULL );
+
+    global_channel_cnt += 1;
+    if(global_channel_cnt>8)
+    {
+     global_channel_cnt=0;
+     return((global_play_return[8]));
+    }
+    return((global_play_return[global_channel_cnt-1]));
+}
+*/
 
 /* --------------------------------------------------------------------------- */
 /*

@@ -43,10 +43,18 @@
 #include <windows.h>
 #endif
 
+#define ROM_PADMAN
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+
+#include <sifrpc.h>//Masteries, fix SDL mixer
+
+#include <kernel.h>//Masteries, EE threads
+
+
 
 #include "bgdi.h"
 #include "bgdrtm.h"
@@ -63,6 +71,18 @@
 #elif defined(TARGET_ANDROID)
 #include <SDL.h>
 #endif
+
+#include <SDL_thread.h>//Masteries
+#include <SDL_timer.h>//Masteries
+
+//Masteries, para la vibración del mando
+#include <tamtypes.h>
+#include <kernel.h>
+#include <sifrpc.h>
+#include "libpad.h"
+//Fin includes vibración
+
+//#include <SDL_systhread.h>//Masteries
 
 /* ---------------------------------------------------------------------- */
 
@@ -98,7 +118,36 @@ extern char usb_mass_irx[];
 
 #include <SDL.h>
 
-int SDL_main( int argc, char *argv[] )
+/*  Masteries
+ * waitPadReady()
+ */
+int waitPadReady(int port, int slot)
+{
+    int state;
+    int lastState;
+    char stateString[16];
+
+    state = padGetState(port, slot);
+    lastState = -1;
+    while((state != PAD_STATE_STABLE) && (state != PAD_STATE_FINDCTP1)) {
+        if (state != lastState) {
+            padStateInt2String(state, stateString);
+            printf("Please wait, pad(%d,%d) is in state %s\n",
+                       port, slot, stateString);
+        }
+        lastState = state;
+        state=padGetState(port, slot);
+    }
+    // Were the pad ever 'out of sync'?
+    if (lastState != -1) {
+        printf("Pad OK!\n");
+    }
+    return 0;
+}
+
+
+//-----------------------------------------------------
+int SDL_main( int argc, char *argv[] )//SDL_main  Masteries
 {
     char  filename[30], dcbname[ __MAX_PATH ], *ptr ;
     int i, j, ret = -1;
@@ -106,8 +155,11 @@ int SDL_main( int argc, char *argv[] )
     INSTANCE * mainproc_running;
     dcb_signature dcb_signature;
 
+    static char actAlign[6];
+
 // ----------------------------
   SifIopReset(NULL, 0);
+  //SifResetIop();//Masteries, trying to fix the SDL mixer audio issue
   while(!SifIopSync()){};
 
   SifInitRpc(0);
@@ -120,7 +172,6 @@ int SDL_main( int argc, char *argv[] )
 
 // ----------------------------
 	printf("Cargando .. IRXs\n");
-
 	// USB mass support
     SifExecModuleBuffer(&usbd_irx, size_usbd_irx, 0, NULL, &ret);
     printf("USBD.irx loadmodule %d\n", ret);
@@ -154,7 +205,6 @@ int SDL_main( int argc, char *argv[] )
     }
 
 
-
 // ----------------------------
     char cadmodulos[30];
 
@@ -175,11 +225,29 @@ int SDL_main( int argc, char *argv[] )
 // ----------------------------
 
     printf("iniciando sdl todo \n");
-	if ( SDL_Init (SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_AUDIO ) < 0 )
+	if ( SDL_Init (SDL_INIT_AUDIO | SDL_INIT_VIDEO | SDL_INIT_JOYSTICK | SDL_INIT_TIMER ) < 0 )
 	{
 		printf ("ColDev - SDL Init Error: %s\n", SDL_GetError()) ;
 		return 1 ;
 	}
+
+//Masteries, init Dualshock gamepad
+padInit(0);
+
+padSetMainMode(0, 0, 1, PAD_MMODE_LOCK);//1   3
+actAlign[0] = 0;
+actAlign[1] = 1;
+actAlign[2] = 0xff;
+actAlign[3] = 0xff;
+actAlign[4] = 0xff;
+actAlign[5] = 0xff;
+actAlign[6] = 0xff;
+waitPadReady(0, 0);
+padSetActAlign(0, 0, actAlign);
+waitPadReady(0, 0);
+
+actAlign[0] = 1; // Start small engine
+padSetActDirect(0, 0, actAlign);
 
 // ----------------------------
 
@@ -201,7 +269,6 @@ int SDL_main( int argc, char *argv[] )
     debug = 0;
 
 // ----------------------------
-
 
 printf("Fase 1 \n");
 
@@ -287,4 +354,31 @@ printf("Fase 6 \n");
 printf("Fase 7 \n");
     return ret;
 }
+
+
+/*
+int pico_main( int argc, char *argv[] )
+{
+    //Masteries
+    struct t_ee_thread mainThread, soundThread;
+    int mainThreadId, soundThreadId;
+
+    mainThread.status = 0;
+    mainThread.func = (void*)the_main;
+    mainThread.stack = (void*)((int*)malloc(0x2000) + 0x2000 - 4);//(void*)((int*)malloc(0x800) + 0x800 - 4)
+    mainThread.initial_priority = 0x40;//Masteries, priority 64 decimal
+
+    //Masteries, start the main thread
+    mainThreadId = CreateThread( &mainThread );
+    StartThread( mainThreadId, NULL );
+
+   while( 1 )
+      {
+      iRotateThreadReadyQueue( 0x40 );
+      }
+
+   return 0;
+}
+*/
+
 

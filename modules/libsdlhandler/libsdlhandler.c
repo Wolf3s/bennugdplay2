@@ -27,7 +27,9 @@
 #include "bgddl.h"
 
 #include <SDL.h>
+#include <SDL_timer.h>//Masteries
 
+unsigned char mst_time=0x00;
 /* ----------------------------------------------------------------- */
 /* Public functions                                                  */
 
@@ -49,6 +51,21 @@ static void dump_new_events()
 
     /* Get new events */
     SDL_PumpEvents();
+
+    //Masteries
+    /*
+        if(mst_time==0x01)
+                {
+                mst_time=0x00;
+                SDL_Delay(3);//Masteries, 3 ms for the audio thread  2
+                }
+        else
+                {
+                mst_time=0x01;
+                SDL_Delay(2);
+                }
+    */
+    SDL_Delay(2);
 }
 
 /* ----------------------------------------------------------------- */

@@ -1,0 +1,6 @@
+
+Masteries fixes to PlayStation 2 BennuGD port
+
+-32 bit color 100% done!
+-Sound Thread  90% fixed
+-DualShock 2 Vibration support 100% done

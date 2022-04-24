@@ -39,6 +39,9 @@
 
 #include <assert.h>
 
+#include <SDL_timer.h>//Masteries
+#include <kernel.h>//Masteries, EE threads
+
 /* ---------------------------------------------------------------------- */
 /* Interpreter's main module                                              */
 /* ---------------------------------------------------------------------- */
@@ -92,6 +95,7 @@ int instance_go_all()
     int i_count = 0 ;
     int n;
     int status;
+    unsigned char mst_time = 0x01;
 
     must_exit = 0 ;
 
@@ -204,7 +208,18 @@ int instance_go_all()
                     for ( n = 0; n < handler_hook_count; n++ )
                         handler_hook_list[n].hook();
                 /* Hook */
-
+                /*
+                if(mst_time==0x01)
+                {
+                mst_time=0x00;
+                SDL_Delay(3);//Masteries, 3 ms for the audio thread  2
+                }
+                else
+                {
+                mst_time=0x01;
+                SDL_Delay(2);
+                }
+                */
                 continue ;
             }
         }
