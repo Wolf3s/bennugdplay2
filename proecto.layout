@@ -1,23 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="default" />
-	<File name="..\Makefile.eeglobal" open="1" top="0" tabpos="11">
+	<File name="..\Makefile.eeglobal" open="0" top="0" tabpos="11">
 		<Cursor position="3517" topLine="61" />
 	</File>
 	<File name="Makefile" open="0" top="0" tabpos="2">
 		<Cursor position="273" topLine="61" />
 	</File>
-	<File name="core\bgdi\src\main.c" open="1" top="0" tabpos="7">
+	<File name="YETI3D\source\main.c" open="0" top="0" tabpos="1">
+		<Cursor position="1243" topLine="54" />
+	</File>
+	<File name="YETI3D\source\y3d\y3d_file.c" open="0" top="0" tabpos="0">
+		<Cursor position="1102" topLine="36" />
+	</File>
+	<File name="YETI3D\yeti3d_Symbols.h" open="0" top="0" tabpos="1">
+		<Cursor position="231" topLine="0" />
+	</File>
+	<File name="core\bgdi\src\main.c" open="0" top="0" tabpos="7">
 		<Cursor position="4978" topLine="276" />
 	</File>
 	<File name="core\bgdrtm\src\instance.c" open="0" top="0" tabpos="11">
 		<Cursor position="14204" topLine="502" />
 	</File>
-	<File name="core\bgdrtm\src\interpreter.c" open="1" top="0" tabpos="9">
+	<File name="core\bgdrtm\src\interpreter.c" open="0" top="0" tabpos="9">
 		<Cursor position="6250" topLine="204" />
 	</File>
+	<File name="core\bgdrtm\src\misc.c" open="0" top="0" tabpos="0">
+		<Cursor position="1508" topLine="44" />
+	</File>
 	<File name="core\bgdrtm\src\sysprocs.c" open="0" top="0" tabpos="9">
-		<Cursor position="17117" topLine="513" />
+		<Cursor position="17117" topLine="114" />
+	</File>
+	<File name="core\common\files.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="112" />
+	</File>
+	<File name="core\common\xctype.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="112" />
+	</File>
+	<File name="core\include\monolithic_includes.h" open="0" top="0" tabpos="0">
+		<Cursor position="3549" topLine="126" />
 	</File>
 	<File name="modules\libblit\g_blit.c" open="0" top="0" tabpos="0">
 		<Cursor position="68647" topLine="1968" />
@@ -28,26 +49,35 @@
 	<File name="modules\libblit\libblit.c" open="0" top="0" tabpos="0">
 		<Cursor position="171" topLine="32" />
 	</File>
+	<File name="modules\libblit\libblit_symbols.h" open="0" top="0" tabpos="0">
+		<Cursor position="410" topLine="12" />
+	</File>
 	<File name="modules\libdraw\libdraw.c" open="0" top="0" tabpos="0">
 		<Cursor position="30462" topLine="932" />
 	</File>
 	<File name="modules\libfont\libfont.c" open="0" top="0" tabpos="0">
 		<Cursor position="15279" topLine="703" />
 	</File>
-	<File name="modules\libgrbase\g_bitmap.c" open="1" top="0" tabpos="1">
+	<File name="modules\libfont\libfont_symbols.h" open="0" top="0" tabpos="0">
+		<Cursor position="1188" topLine="32" />
+	</File>
+	<File name="modules\libgrbase\g_bitmap.c" open="0" top="0" tabpos="1">
 		<Cursor position="2968" topLine="85" />
 	</File>
 	<File name="modules\libgrbase\g_bitmap.h" open="0" top="0" tabpos="0">
 		<Cursor position="2130" topLine="0" />
 	</File>
-	<File name="modules\libgrbase\g_conversion.c" open="1" top="0" tabpos="2">
+	<File name="modules\libgrbase\g_conversion.c" open="0" top="0" tabpos="2">
 		<Cursor position="1398" topLine="21" />
 	</File>
-	<File name="modules\libgrbase\g_pal.c" open="1" top="0" tabpos="3">
+	<File name="modules\libgrbase\g_pal.c" open="0" top="0" tabpos="3">
 		<Cursor position="1418" topLine="18" />
 	</File>
 	<File name="modules\libgrbase\libgrbase.c" open="0" top="0" tabpos="0">
 		<Cursor position="1866" topLine="33" />
+	</File>
+	<File name="modules\libgrbase\libgrbase_symbols.h" open="0" top="0" tabpos="0">
+		<Cursor position="1456" topLine="30" />
 	</File>
 	<File name="modules\libkey\libkey.c" open="0" top="0" tabpos="13">
 		<Cursor position="17174" topLine="509" />
@@ -70,10 +100,13 @@
 	<File name="modules\librender\librender.c" open="0" top="0" tabpos="11">
 		<Cursor position="9205" topLine="207" />
 	</File>
+	<File name="modules\librender\librender_symbols.h" open="0" top="0" tabpos="0">
+		<Cursor position="3563" topLine="139" />
+	</File>
 	<File name="modules\libscroll\libscroll.c" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="79" />
 	</File>
-	<File name="modules\libsdlhandler\libsdlhandler.c" open="1" top="0" tabpos="10">
+	<File name="modules\libsdlhandler\libsdlhandler.c" open="0" top="0" tabpos="10">
 		<Cursor position="3172" topLine="75" />
 	</File>
 	<File name="modules\libsdlhandler\libsdlhandler_symbols.h" open="0" top="0" tabpos="0">
@@ -109,13 +142,13 @@
 	<File name="modules\mod_grproc\mod_grproc.c" open="0" top="0" tabpos="0">
 		<Cursor position="32881" topLine="245" />
 	</File>
-	<File name="modules\mod_map\file_fpg.c" open="1" top="0" tabpos="4">
+	<File name="modules\mod_map\file_fpg.c" open="0" top="0" tabpos="4">
 		<Cursor position="1330" topLine="15" />
 	</File>
-	<File name="modules\mod_map\file_pal.c" open="1" top="0" tabpos="5">
+	<File name="modules\mod_map\file_pal.c" open="0" top="0" tabpos="5">
 		<Cursor position="1330" topLine="18" />
 	</File>
-	<File name="modules\mod_map\file_png.c" open="1" top="0" tabpos="6">
+	<File name="modules\mod_map\file_png.c" open="0" top="0" tabpos="6">
 		<Cursor position="12508" topLine="0" />
 	</File>
 	<File name="modules\mod_map\mod_map.c" open="0" top="0" tabpos="0">
@@ -130,8 +163,14 @@
 	<File name="modules\mod_regex\regex.c" open="0" top="0" tabpos="0">
 		<Cursor position="70073" topLine="2048" />
 	</File>
-	<File name="modules\mod_sound\mod_sound.c" open="1" top="1" tabpos="8">
-		<Cursor position="13346" topLine="559" />
+	<File name="modules\mod_say\mod_say.c" open="0" top="0" tabpos="0">
+		<Cursor position="1771" topLine="37" />
+	</File>
+	<File name="modules\mod_say\mod_say_symbols.h" open="0" top="0" tabpos="0">
+		<Cursor position="1455" topLine="28" />
+	</File>
+	<File name="modules\mod_sound\mod_sound.c" open="0" top="0" tabpos="8">
+		<Cursor position="15080" topLine="628" />
 	</File>
 	<File name="modules\mod_sys\mod_sys.c" open="0" top="0" tabpos="0">
 		<Cursor position="3529" topLine="0" />

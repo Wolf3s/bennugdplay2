@@ -98,7 +98,10 @@
 #ifndef NO_MODCURL
 #   include <mod_curl_symbols.h>
 #endif
+
 //#include <mod_sqlite3_symbols.h>
+
+#include <yeti3d_Symbols.h>
 
 typedef struct
 {
@@ -187,6 +190,8 @@ basic_symbols symbol_list[] =
 #endif
 	{ "mod_flic.fakelib"     , NULL, NULL, NULL, NULL, NULL, mod_flic_functions_exports },
     //	{ "mod_debug.fakelib"    , mod_debug_modules_dependency, NULL, NULL, NULL, NULL, NULL },
+	{ "yeti3d.fakelib"     , yeti3d_modules_dependency, NULL, NULL, yeti3d_globals_def, NULL, yeti3d_functions_exports }, //yeti3d
+
 	/* Unofficial modules */
 #ifndef NO_MODICONV
 	{ "mod_iconv.fakelib"    , NULL, NULL, NULL, NULL, NULL, mod_iconv_functions_exports },
@@ -272,6 +277,8 @@ extra_symbols symbol_list_runtime[] =
 	{ NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL }, //mod_mem
 #endif
 	{ NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL }, //mod_flic
+	{ yeti3d_globals_fixup, NULL, yeti3d_module_initialize, NULL, NULL, NULL, NULL, yeti3d_handler_hooks }, //yeti3d
+
     //	{ mod_debug_globals_fixup, mod_debug_locals_fixup, mod_debug_module_initialize, mod_debug_module_finalize, NULL, NULL, mod_debug_process_exec_hook, NULL }, //mod_debug
 	/* Unofficial modules */
 #ifndef NO_MODICONV

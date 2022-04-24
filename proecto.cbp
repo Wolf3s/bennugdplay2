@@ -12,8 +12,6 @@
 			<CompileFile command="$make -f $makefile $file" />
 			<Clean command="$make -f $makefile clean" />
 			<DistClean command="$make -f $makefile distclean" />
-			<AskRebuildNeeded command="$make -q -f $makefile $target" />
-			<SilentBuild command="$make -s -f $makefile $target" />
 		</MakeCommands>
 		<Build>
 			<Target title="default">
@@ -35,8 +33,6 @@
 					<CompileFile command="$make -f $makefile $file" />
 					<Clean command="$make -f $makefile clean" />
 					<DistClean command="$make -f $makefile distclean" />
-					<AskRebuildNeeded command="$make -q -f $makefile " />
-					<SilentBuild command="$make -s -f $makefile " />
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -45,6 +41,85 @@
 		</Compiler>
 		<Unit filename="..\Makefile.eeglobal" />
 		<Unit filename="Makefile" />
+		<Unit filename="YETI3D\source\game\entities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\maps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\models.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\screens.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_animation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_ansic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_cell.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_engine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_entity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_fixed.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_fruity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_keyboard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_pixel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_sound.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_spanner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_surface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_vertex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_yeti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\yeti3d_Symbols.h" />
 		<Unit filename="core\bgdi\src\main.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -84,6 +159,7 @@
 		<Unit filename="core\common\xctype.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="core\include\monolithic_includes.h" />
 		<Unit filename="modules\libblit\g_blit.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -396,6 +472,7 @@
 		<Extensions>
 			<code_completion />
 			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

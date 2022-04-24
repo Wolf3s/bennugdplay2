@@ -38,8 +38,7 @@
 static int modsay_say( INSTANCE * my, int * params )
 {
     /* Show debugging info also in stdout */
-    SDL_Log( "%s\n", string_get( params[0] ) );
-    fflush( stdout );
+    printf(  string_get( params[0] ) );
     string_discard( params[0] ) ;
     return 1 ;
 }
@@ -49,7 +48,7 @@ static int modsay_say( INSTANCE * my, int * params )
 static int modsay_say_fast( INSTANCE * my, int * params )
 {
     /* Show debugging info also in stdout */
-    SDL_Log( "%s\n", string_get( params[0] ) );
+    printf(  string_get( params[0] ) );
     string_discard( params[0] ) ;
     return 1 ;
 }
