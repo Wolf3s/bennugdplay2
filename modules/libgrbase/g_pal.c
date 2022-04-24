@@ -35,6 +35,7 @@
 #include "libgrbase.h"
 #include "g_video.h"
 
+#define COLORSPACE_BGR    //Masteries, fix PlayStation2 BennuGD port
 /* --------------------------------------------------------------------------- */
 
 PALETTE * first_palette = NULL ;
@@ -698,7 +699,7 @@ int gr_rgba( int r, int g, int b, int a )
 #ifdef COLORSPACE_BGR
     color = (( b >> sys_pixel_format->Rloss ) << sys_pixel_format->Rshift ) |
             (( g >> sys_pixel_format->Gloss ) << sys_pixel_format->Gshift ) |
-            (( r >> sys_pixel_format->Bloss ) << sys_pixel_format->Bshift ) ;    
+            (( r >> sys_pixel_format->Bloss ) << sys_pixel_format->Bshift ) ;
 #else
     color = (( r >> sys_pixel_format->Rloss ) << sys_pixel_format->Rshift ) |
             (( g >> sys_pixel_format->Gloss ) << sys_pixel_format->Gshift ) |

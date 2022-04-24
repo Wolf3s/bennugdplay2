@@ -34,6 +34,7 @@
 #include "bgddl.h"
 #include "dlvaracc.h"
 
+#define COLORSPACE_BGR    //Masteries, fix PlayStation2 BennuGD port
 /* --------------------------------------------------------------------------- */
 
 /* Conversion tables - used by 16 bits conversions - 256K */

@@ -34,6 +34,7 @@
 #include "libgrbase.h"
 #include "bitwise_map.h"
 
+#define COLORSPACE_BGR    //Masteries, fix PlayStation2 BennuGD port
 /* --------------------------------------------------------------------------- */
 
 uint32_t * map_code_bmp = NULL ;

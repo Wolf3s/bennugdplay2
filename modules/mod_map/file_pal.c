@@ -30,6 +30,7 @@
 
 #include "mod_map.h"
 
+#define COLORSPACE_BGR    //Masteries, fix PlayStation2 BennuGD port
 /* --------------------------------------------------------------------------- */
 
 static uint8_t colors[256*3] ;

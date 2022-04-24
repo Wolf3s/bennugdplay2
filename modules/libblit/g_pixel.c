@@ -134,27 +134,27 @@ void gr_put_pixel( GRAPH * dest, int x, int y, int color )
 
                     if ( _f != 0x000000ff )
                     {
-                        r = ( ( color & 0x00ff0000 ) * _f + (( *ptr & 0x00ff0000 ) * _f2 ) ) >> 8 ;
+                        b = ( ( color & 0x00ff0000 ) * _f + (( *ptr & 0x00ff0000 ) * _f2 ) ) >> 8 ;
                         g = ( ( color & 0x0000ff00 ) * _f + (( *ptr & 0x0000ff00 ) * _f2 ) ) >> 8 ;
-                        b = ( ( color & 0x000000ff ) * _f + (( *ptr & 0x000000ff ) * _f2 ) ) >> 8 ;
+                        r = ( ( color & 0x000000ff ) * _f + (( *ptr & 0x000000ff ) * _f2 ) ) >> 8 ;
 
-                        if ( r > 0x00ff0000 ) r = 0x00ff0000 ; else r &= 0x00ff0000 ;
+                        if ( b > 0x00ff0000 ) b = 0x00ff0000 ; else b &= 0x00ff0000 ;
                         if ( g > 0x0000ff00 ) g = 0x0000ff00 ; else g &= 0x0000ff00 ;
-                        if ( b > 0x000000ff ) b = 0x000000ff ; else b &= 0x000000ff ;
+                        if ( r > 0x000000ff ) r = 0x000000ff ; else r &= 0x000000ff ;
 
-                        *ptr = ( _f << 24 ) | r | g | b ;
+                        *ptr = ( _f << 24 ) | b | g | r ;
                     }
                     else
                     {
-                        r = ( ( color & 0x00ff0000 ) * pixel_alpha + (( *ptr & 0x00ff0000 ) * _f2 ) ) >> 8 ;
+                        b = ( ( color & 0x00ff0000 ) * pixel_alpha + (( *ptr & 0x00ff0000 ) * _f2 ) ) >> 8 ;
                         g = ( ( color & 0x0000ff00 ) * pixel_alpha + (( *ptr & 0x0000ff00 ) * _f2 ) ) >> 8 ;
-                        b = ( ( color & 0x000000ff ) * pixel_alpha + (( *ptr & 0x000000ff ) * _f2 ) ) >> 8 ;
+                        r = ( ( color & 0x000000ff ) * pixel_alpha + (( *ptr & 0x000000ff ) * _f2 ) ) >> 8 ;
 
-                        if ( r > 0x00ff0000 ) r = 0x00ff0000 ; else r &= 0x00ff0000 ;
+                        if ( b > 0x00ff0000 ) b = 0x00ff0000 ; else b &= 0x00ff0000 ;
                         if ( g > 0x0000ff00 ) g = 0x0000ff00 ; else g &= 0x0000ff00 ;
-                        if ( b > 0x000000ff ) b = 0x000000ff ; else b &= 0x000000ff ;
+                        if ( r > 0x000000ff ) r = 0x000000ff ; else r &= 0x000000ff ;
 
-                        *ptr = 0xff000000 | r | g | b ;
+                        *ptr = 0xff000000 | b | g | r ;
                     }
                 }
             }

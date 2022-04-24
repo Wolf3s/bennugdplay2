@@ -1,106 +1,133 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="default" />
-	<File name="modules\mod_sound\mod_sound.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="35279" topLine="1635" />
+	<File name="..\Makefile.eeglobal" open="0" top="0" tabpos="2">
+		<Cursor position="3253" topLine="57" />
 	</File>
-	<File name="modules\libmouse\libmouse.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="19902" topLine="485" />
+	<File name="Makefile" open="1" top="0" tabpos="2">
+		<Cursor position="3018" topLine="0" />
 	</File>
-	<File name="modules\mod_debug\mod_debug.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="87705" topLine="2737" />
+	<File name="core\bgdi\src\main.c" open="0" top="0" tabpos="1">
+		<Cursor position="6841" topLine="214" />
 	</File>
-	<File name="modules\mod_mem\mod_mem.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="31" />
+	<File name="core\bgdrtm\src\sysprocs.c" open="0" top="0" tabpos="2">
+		<Cursor position="16568" topLine="550" />
 	</File>
-	<File name="core\bgdi\src\main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="5198" topLine="184" />
+	<File name="modules\libblit\g_blit.c" open="0" top="0" tabpos="0">
+		<Cursor position="68647" topLine="1968" />
 	</File>
-	<File name="modules\mod_grproc\mod_grproc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="32881" topLine="245" />
+	<File name="modules\libblit\g_pixel.c" open="0" top="0" tabpos="0">
+		<Cursor position="5706" topLine="90" />
 	</File>
-	<File name="modules\libblit\libblit.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="28" />
+	<File name="modules\libblit\libblit.c" open="0" top="0" tabpos="0">
+		<Cursor position="171" topLine="32" />
 	</File>
-	<File name="..\Makefile.eeglobal" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="3253" topLine="57" />
+	<File name="modules\libdraw\libdraw.c" open="0" top="0" tabpos="0">
+		<Cursor position="30462" topLine="932" />
 	</File>
-	<File name="modules\mod_video\mod_video.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="199" />
+	<File name="modules\libfont\libfont.c" open="0" top="0" tabpos="0">
+		<Cursor position="15279" topLine="703" />
 	</File>
-	<File name="modules\mod_timers\mod_timers.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2944" topLine="60" />
+	<File name="modules\libgrbase\g_bitmap.c" open="1" top="0" tabpos="1">
+		<Cursor position="2968" topLine="85" />
 	</File>
-	<File name="modules\mod_time\mod_time.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="6621" topLine="220" />
+	<File name="modules\libgrbase\g_bitmap.h" open="0" top="0" tabpos="0">
+		<Cursor position="2130" topLine="0" />
 	</File>
-	<File name="modules\mod_regex\regex.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="70073" topLine="2048" />
+	<File name="modules\libgrbase\g_conversion.c" open="1" top="0" tabpos="3">
+		<Cursor position="1398" topLine="21" />
 	</File>
-	<File name="modules\mod_file\mod_file.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="38" />
+	<File name="modules\libgrbase\g_pal.c" open="1" top="0" tabpos="4">
+		<Cursor position="1418" topLine="18" />
 	</File>
-	<File name="modules\libscroll\libscroll.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="79" />
+	<File name="modules\libgrbase\libgrbase.c" open="0" top="0" tabpos="0">
+		<Cursor position="1866" topLine="33" />
 	</File>
-	<File name="modules\mod_sys\mod_sys.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="3529" topLine="0" />
+	<File name="modules\libkey\libkey.c" open="0" top="0" tabpos="0">
+		<Cursor position="16543" topLine="518" />
 	</File>
-	<File name="modules\mod_draw\mod_draw.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="16732" topLine="557" />
+	<File name="modules\libmouse\libmouse.c" open="0" top="0" tabpos="0">
+		<Cursor position="19902" topLine="485" />
 	</File>
-	<File name="modules\mod_proc\mod_proc.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="216" />
+	<File name="modules\librender\g_frame.c" open="0" top="0" tabpos="0">
+		<Cursor position="8850" topLine="309" />
 	</File>
-	<File name="modules\mod_dir\mod_dir.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="5773" topLine="174" />
+	<File name="modules\librender\g_instance.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="17" />
 	</File>
-	<File name="modules\libfont\libfont.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="26694" topLine="711" />
+	<File name="modules\librender\g_screen.c" open="0" top="0" tabpos="0">
+		<Cursor position="21080" topLine="516" />
 	</File>
-	<File name="modules\libgrbase\libgrbase.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1866" topLine="33" />
+	<File name="modules\librender\librender.c" open="0" top="0" tabpos="0">
+		<Cursor position="9105" topLine="205" />
 	</File>
-	<File name="modules\libdraw\libdraw.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="115" />
+	<File name="modules\libscroll\libscroll.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="79" />
 	</File>
-	<File name="modules\libkey\libkey.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="16543" topLine="518" />
+	<File name="modules\libsdlhandler\libsdlhandler.c" open="0" top="0" tabpos="0">
+		<Cursor position="2562" topLine="55" />
 	</File>
-	<File name="modules\mod_cd\mod_cd.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="10666" topLine="344" />
+	<File name="modules\libtext\libtext.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="111" />
 	</File>
-	<File name="Makefile" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2824" topLine="52" />
+	<File name="modules\libvideo\g_video.c" open="0" top="0" tabpos="0">
+		<Cursor position="22985" topLine="676" />
 	</File>
-	<File name="modules\librender\librender.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="9105" topLine="205" />
+	<File name="modules\libwm\libwm.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="46" />
 	</File>
-	<File name="modules\mod_blendop\mod_blendop.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="161" />
+	<File name="modules\mod_blendop\mod_blendop.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="161" />
 	</File>
-	<File name="modules\libtext\libtext.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="111" />
+	<File name="modules\mod_cd\mod_cd.c" open="0" top="0" tabpos="0">
+		<Cursor position="10666" topLine="344" />
 	</File>
-	<File name="modules\librender\g_screen.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="21080" topLine="516" />
+	<File name="modules\mod_debug\mod_debug.c" open="0" top="0" tabpos="0">
+		<Cursor position="87705" topLine="2737" />
 	</File>
-	<File name="modules\libwm\libwm.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="46" />
+	<File name="modules\mod_dir\mod_dir.c" open="0" top="0" tabpos="0">
+		<Cursor position="5773" topLine="174" />
 	</File>
-	<File name="modules\libsdlhandler\libsdlhandler.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2562" topLine="55" />
+	<File name="modules\mod_draw\mod_draw.c" open="0" top="0" tabpos="0">
+		<Cursor position="16732" topLine="557" />
 	</File>
-	<File name="modules\libvideo\g_video.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="22985" topLine="676" />
+	<File name="modules\mod_file\mod_file.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="38" />
 	</File>
-	<File name="modules\librender\g_instance.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="17" />
+	<File name="modules\mod_grproc\mod_grproc.c" open="0" top="0" tabpos="0">
+		<Cursor position="32881" topLine="245" />
 	</File>
-	<File name="core\bgdrtm\src\sysprocs.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="16568" topLine="550" />
+	<File name="modules\mod_map\file_fpg.c" open="1" top="0" tabpos="5">
+		<Cursor position="1330" topLine="15" />
 	</File>
-	<File name="modules\librender\g_frame.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="8850" topLine="309" />
+	<File name="modules\mod_map\file_pal.c" open="1" top="0" tabpos="6">
+		<Cursor position="1330" topLine="18" />
+	</File>
+	<File name="modules\mod_map\file_png.c" open="1" top="1" tabpos="7">
+		<Cursor position="12508" topLine="367" />
+	</File>
+	<File name="modules\mod_mem\mod_mem.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="31" />
+	</File>
+	<File name="modules\mod_proc\mod_proc.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="216" />
+	</File>
+	<File name="modules\mod_regex\regex.c" open="0" top="0" tabpos="0">
+		<Cursor position="70073" topLine="2048" />
+	</File>
+	<File name="modules\mod_sound\mod_sound.c" open="0" top="0" tabpos="0">
+		<Cursor position="35279" topLine="1635" />
+	</File>
+	<File name="modules\mod_sys\mod_sys.c" open="0" top="0" tabpos="0">
+		<Cursor position="3529" topLine="0" />
+	</File>
+	<File name="modules\mod_time\mod_time.c" open="0" top="0" tabpos="0">
+		<Cursor position="6621" topLine="220" />
+	</File>
+	<File name="modules\mod_timers\mod_timers.c" open="0" top="0" tabpos="0">
+		<Cursor position="2944" topLine="60" />
+	</File>
+	<File name="modules\mod_video\mod_video.c" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="199" />
 	</File>
 </CodeBlocks_layout_file>
