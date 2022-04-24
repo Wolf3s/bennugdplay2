@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bennugd PS2" />
+		<Option makefile="makefile" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="ps2_gcc_compiler" />
+		<MakeCommands>
+			<Build command="$make -f $makefile" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean" />
+			<DistClean command="$make -f $makefile distclean" />
+		</MakeCommands>
+		<Build>
+			<Target title="default">
+				<Option output="bin\Release\ps2dev" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="ps2_gcc_compiler" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+				<Environment>
+					<Variable name="EE_INCS" value="C:\ps2dev\msys\1.0\local\ps2dev\ee\ee\include" />
+				</Environment>
+				<MakeCommands>
+					<Build command="$make -f $makefile" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="..\Makefile.eeglobal" />
+		<Unit filename="Makefile" />
+		<Unit filename="YETI3D\source\game\entities.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\game.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\maps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\models.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\game\screens.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_animation.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_ansic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_cell.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_engine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_entity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_fixed.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_fruity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_keyboard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_pixel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_sound.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_spanner.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_surface.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_vertex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\source\y3d\y3d_yeti.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="YETI3D\yeti3d_Symbols.h" />
+		<Unit filename="core\bgdi\src\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\copy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\dcbr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\dirs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\instance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\interpreter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\misc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\strings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\sysprocs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\bgdrtm\src\varspace_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\common\debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\common\files.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\common\xctype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="core\include\monolithic_includes.h" />
+		<Unit filename="mod_ps2\main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mod_ps2\mod_play2_Symbols.h" />
+		<Unit filename="modules\libblit\g_blit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libblit\g_blit.h" />
+		<Unit filename="modules\libblit\g_pixel.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libblit\g_pixel.h" />
+		<Unit filename="modules\libblit\libblit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libblit\libblit.h" />
+		<Unit filename="modules\libblit\libblit_symbols.h" />
+		<Unit filename="modules\libdraw\libdraw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libdraw\libdraw.h" />
+		<Unit filename="modules\libfont\libfont.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libfont\libfont.h" />
+		<Unit filename="modules\libfont\libfont_symbols.h" />
+		<Unit filename="modules\libgrbase\bitwise_map.h" />
+		<Unit filename="modules\libgrbase\g_bitmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_bitmap.h" />
+		<Unit filename="modules\libgrbase\g_blendop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_blendop.h" />
+		<Unit filename="modules\libgrbase\g_clear.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_clear.h" />
+		<Unit filename="modules\libgrbase\g_conversion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_conversion.h" />
+		<Unit filename="modules\libgrbase\g_grlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_grlib.h" />
+		<Unit filename="modules\libgrbase\g_pal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\g_pal.h" />
+		<Unit filename="modules\libgrbase\g_region.h" />
+		<Unit filename="modules\libgrbase\libgrbase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libgrbase\libgrbase.h" />
+		<Unit filename="modules\libgrbase\libgrbase_symbols.h" />
+		<Unit filename="modules\libgrbase\resolution.h" />
+		<Unit filename="modules\libjoy\caanoo\i2c-dev.h" />
+		<Unit filename="modules\libjoy\caanoo\te9_tf9_hybrid_driver.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libjoy\caanoo\te9_tf9_hybrid_driver.h" />
+		<Unit filename="modules\libjoy\libjoy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libjoy\libjoy.h" />
+		<Unit filename="modules\libjoy\libjoy_symbols.h" />
+		<Unit filename="modules\libkey\libkey.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libkey\libkey.h" />
+		<Unit filename="modules\libkey\libkey_symbols.h" />
+		<Unit filename="modules\libmouse\libmouse.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libmouse\libmouse_symbols.h" />
+		<Unit filename="modules\librender\g_fade.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_fade.h" />
+		<Unit filename="modules\librender\g_frame.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_frame.h" />
+		<Unit filename="modules\librender\g_instance.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_instance.h" />
+		<Unit filename="modules\librender\g_object.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_object.h" />
+		<Unit filename="modules\librender\g_rects.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_rects.h" />
+		<Unit filename="modules\librender\g_screen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\g_screen.h" />
+		<Unit filename="modules\librender\librender.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\librender.h" />
+		<Unit filename="modules\librender\librender_symbols.h" />
+		<Unit filename="modules\librender\scaler.h" />
+		<Unit filename="modules\librender\scaler_hq2x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\scaler_hq2x.h" />
+		<Unit filename="modules\librender\scaler_normal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\scaler_normal.h" />
+		<Unit filename="modules\librender\scaler_scale2x.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\scaler_scale2x.h" />
+		<Unit filename="modules\librender\scaler_scanline.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\librender\scaler_scanline.h" />
+		<Unit filename="modules\libscroll\libscroll.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libscroll\libscroll.h" />
+		<Unit filename="modules\libscroll\libscroll_symbols.h" />
+		<Unit filename="modules\libsdlhandler\libsdlhandler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libsdlhandler\libsdlhandler_symbols.h" />
+		<Unit filename="modules\libtext\libtext.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libtext\libtext.h" />
+		<Unit filename="modules\libtext\libtext_symbols.h" />
+		<Unit filename="modules\libvideo\g_regions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libvideo\g_regions.h" />
+		<Unit filename="modules\libvideo\g_video.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libvideo\g_video.h" />
+		<Unit filename="modules\libvideo\libvideo.h" />
+		<Unit filename="modules\libvideo\libvideo_symbols.h" />
+		<Unit filename="modules\libwm\libwm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\libwm\libwm_symbols.h" />
+		<Unit filename="modules\mod_blendop\mod_blendop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_blendop\mod_blendop_symbols.h" />
+		<Unit filename="modules\mod_cd\mod_cd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_cd\mod_cd_symbols.h" />
+		<Unit filename="modules\mod_curl\mod_curl_symbols.h" />
+		<Unit filename="modules\mod_debug\mod_debug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_debug\mod_debug_symbols.h" />
+		<Unit filename="modules\mod_debug\systexts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_dir\mod_dir.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_dir\mod_dir_symbols.h" />
+		<Unit filename="modules\mod_draw\mod_draw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_draw\mod_draw_symbols.h" />
+		<Unit filename="modules\mod_effects\mod_effects.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_effects\mod_effects_symbols.h" />
+		<Unit filename="modules\mod_file\mod_file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_file\mod_file_symbols.h" />
+		<Unit filename="modules\mod_flic\mod_flic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_flic\mod_flic.h" />
+		<Unit filename="modules\mod_flic\mod_flic_symbols.h" />
+		<Unit filename="modules\mod_fmodex\mod_fmodex_symbols.h" />
+		<Unit filename="modules\mod_grproc\mod_grproc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_grproc\mod_grproc_symbols.h" />
+		<Unit filename="modules\mod_image\image_symbols.h" />
+		<Unit filename="modules\mod_joy\mod_joy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_joy\mod_joy_symbols.h" />
+		<Unit filename="modules\mod_key\mod_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_key\mod_key_symbols.h" />
+		<Unit filename="modules\mod_m7\mod_m7.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_m7\mod_m7_symbols.h" />
+		<Unit filename="modules\mod_map\file_fnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\file_fpg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\file_map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\file_pal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\file_pcx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\file_png.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\mod_map.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_map\mod_map.h" />
+		<Unit filename="modules\mod_map\mod_map_symbols.h" />
+		<Unit filename="modules\mod_math\mod_math.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_math\mod_math_symbols.h" />
+		<Unit filename="modules\mod_mathi\mod_mathi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_mathi\mod_mathi_symbols.h" />
+		<Unit filename="modules\mod_mem\mod_mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_mem\mod_mem_symbols.h" />
+		<Unit filename="modules\mod_mouse\mod_mouse_symbols.h" />
+		<Unit filename="modules\mod_path\mod_path.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_path\mod_path_symbols.h" />
+		<Unit filename="modules\mod_proc\mod_proc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_proc\mod_proc_symbols.h" />
+		<Unit filename="modules\mod_rand\mod_rand.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_rand\mod_rand_symbols.h" />
+		<Unit filename="modules\mod_regex\mod_regex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_regex\mod_regex_symbols.h" />
+		<Unit filename="modules\mod_regex\regex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_regex\regex.h" />
+		<Unit filename="modules\mod_say\mod_say.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_say\mod_say_symbols.h" />
+		<Unit filename="modules\mod_screen\mod_screen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_screen\mod_screen_symbols.h" />
+		<Unit filename="modules\mod_scroll\mod_scroll.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_scroll\mod_scroll_symbols.h" />
+		<Unit filename="modules\mod_sort\mod_sort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_sort\mod_sort_symbols.h" />
+		<Unit filename="modules\mod_sound\mod_sound.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_sound\mod_sound_symbols.h" />
+		<Unit filename="modules\mod_sqlite3\mod_sqlite3_symbols.h" />
+		<Unit filename="modules\mod_string\mod_string.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_string\mod_string_symbols.h" />
+		<Unit filename="modules\mod_sys\mod_sys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_sys\mod_sys_symbols.h" />
+		<Unit filename="modules\mod_text\mod_text.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_text\mod_text_symbols.h" />
+		<Unit filename="modules\mod_time\mod_time.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_time\mod_time_symbols.h" />
+		<Unit filename="modules\mod_timers\mod_timers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_timers\mod_timers_symbols.h" />
+		<Unit filename="modules\mod_video\mod_video.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_video\mod_video_symbols.h" />
+		<Unit filename="modules\mod_wm\mod_wm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules\mod_wm\mod_wm_symbols.h" />
+		<Unit filename="modules\mod_wpad\mod_wpad.h" />
+		<Unit filename="modules\mod_wpad\mod_wpad_symbols.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

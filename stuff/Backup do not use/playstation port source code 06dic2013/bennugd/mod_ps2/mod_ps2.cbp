@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="mod_play2" />
+		<Option compiler="armelfgcc" />
+		<Build>
+			<Target title="win32">
+				<Option output="bin\Release\mod_play2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=pentium3" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-DCOMPILANDO_BENNU" />
+					<Add directory="source\y3d" />
+					<Add directory="..\..\..\..\..\..\..\..\..\sdl\include\SDL" />
+					<Add directory="C:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\modules\libvideo" />
+					<Add directory="C:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include" />
+					<Add directory="C:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\modules\libgrbase" />
+					<Add directory="source\game" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="mingw32" />
+					<Add library="bgdrtm" />
+					<Add directory="C:\Nueva carpeta\dev\yeti3d\YETI3D\port SDL\sdl\lib" />
+					<Add directory="c:\DevBennu\bin" />
+					<Add directory="bin\Release" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-O1" />
+			<Add option="-w" />
+			<Add directory="d:\DevBennu\Examples\4 Dll\Bennu SDK\SDK\include" />
+			<Add directory="d:\DevBennu\Examples\4 Dll\Bennu SDK\SDK\libgrbase" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+		</Linker>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1386339384 source:c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\mod_ps2\main.c
+	<stdlib.h>
+	<stdio.h>
+	<fcntl.h>
+	<unistd.h>
+	<bgddl.h>
+	"dlvaracc.h"
+	<sifrpc.h>
+	<kernel.h>
+	<libmc.h>
+
+1330377612 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\bgddl.h
+	"arrange.h"
+	<typedef_st.h>
+	<sysprocs_st.h>
+	<commons_defs.h>
+	<instance_st.h>
+	<typedef_st.h>
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\arrange.h
+	<stdint.h>
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\typedef_st.h
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\sysprocs_st.h
+	<instance.h>
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\instance.h
+	<stdint.h>
+	<instance_st.h>
+	"i_procdef_st.h"
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\instance_st.h
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\i_procdef_st.h
+	"instance_st.h"
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\commons_defs.h
+
+1318523114 c:\ps2dev\msys\1.0\local\ps2dev\ps2sdk\samples\bennugd\core\include\dlvaracc.h
+	<stdint.h>
+

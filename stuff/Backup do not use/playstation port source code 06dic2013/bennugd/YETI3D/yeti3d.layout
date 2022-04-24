@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="win32" />
+	<File name="source\game\ai\boost.c" open="0" top="0" tabpos="0">
+		<Cursor position="198" topLine="0" />
+	</File>
+	<File name="source\game\ai\bullet.c" open="0" top="0" tabpos="2">
+		<Cursor position="119" topLine="0" />
+	</File>
+	<File name="source\game\ai\death.c" open="0" top="0" tabpos="0">
+		<Cursor position="143" topLine="0" />
+	</File>
+	<File name="source\game\ai\explode.c" open="0" top="0" tabpos="0">
+		<Cursor position="167" topLine="0" />
+	</File>
+	<File name="source\game\ai\pickup.c" open="0" top="0" tabpos="0">
+		<Cursor position="169" topLine="0" />
+	</File>
+	<File name="source\game\ai\quad.c" open="0" top="0" tabpos="0">
+		<Cursor position="167" topLine="0" />
+	</File>
+	<File name="source\game\ai\sheba.c" open="0" top="0" tabpos="0">
+		<Cursor position="150" topLine="0" />
+	</File>
+	<File name="source\game\ai\static_sprite.c" open="0" top="0" tabpos="0">
+		<Cursor position="224" topLine="0" />
+	</File>
+	<File name="source\game\ai\teleporter.c" open="0" top="0" tabpos="0">
+		<Cursor position="167" topLine="0" />
+	</File>
+	<File name="source\game\ai\torch.c" open="0" top="0" tabpos="0">
+		<Cursor position="150" topLine="0" />
+	</File>
+	<File name="source\game\data.h" open="0" top="0" tabpos="0">
+		<Cursor position="58" topLine="0" />
+	</File>
+	<File name="source\game\entities.c" open="0" top="0" tabpos="3">
+		<Cursor position="1040" topLine="27" />
+	</File>
+	<File name="source\game\entities.h" open="0" top="0" tabpos="0">
+		<Cursor position="2037" topLine="38" />
+	</File>
+	<File name="source\game\game.c" open="0" top="0" tabpos="2">
+		<Cursor position="12330" topLine="474" />
+	</File>
+	<File name="source\game\game.h" open="0" top="0" tabpos="0">
+		<Cursor position="961" topLine="41" />
+	</File>
+	<File name="source\game\maps.c" open="0" top="0" tabpos="0">
+		<Cursor position="439" topLine="1" />
+	</File>
+	<File name="source\game\maps.h" open="0" top="0" tabpos="0">
+		<Cursor position="584" topLine="6" />
+	</File>
+	<File name="source\game\models.c" open="0" top="0" tabpos="3">
+		<Cursor position="758" topLine="18" />
+	</File>
+	<File name="source\game\models.h" open="0" top="0" tabpos="3">
+		<Cursor position="882" topLine="21" />
+	</File>
+	<File name="source\game\screens.c" open="0" top="0" tabpos="3">
+		<Cursor position="1761" topLine="54" />
+	</File>
+	<File name="source\game\screens.h" open="0" top="0" tabpos="0">
+		<Cursor position="1408" topLine="15" />
+	</File>
+	<File name="source\game\sprites.h" open="0" top="0" tabpos="0">
+		<Cursor position="527" topLine="0" />
+	</File>
+	<File name="source\gp2x.h" open="0" top="0" tabpos="0">
+		<Cursor position="112" topLine="0" />
+	</File>
+	<File name="source\main.c" open="1" top="1" tabpos="1">
+		<Cursor position="17879" topLine="839" />
+	</File>
+	<File name="source\y3d\y3d_animation.c" open="0" top="0" tabpos="2">
+		<Cursor position="2328" topLine="72" />
+	</File>
+	<File name="source\y3d\y3d_animation.h" open="0" top="0" tabpos="0">
+		<Cursor position="836" topLine="20" />
+	</File>
+	<File name="source\y3d\y3d_ansic.c" open="0" top="0" tabpos="0">
+		<Cursor position="1145" topLine="42" />
+	</File>
+	<File name="source\y3d\y3d_ansic.h" open="0" top="0" tabpos="0">
+		<Cursor position="4420" topLine="168" />
+	</File>
+	<File name="source\y3d\y3d_cell.c" open="0" top="0" tabpos="0">
+		<Cursor position="989" topLine="43" />
+	</File>
+	<File name="source\y3d\y3d_cell.h" open="0" top="0" tabpos="3">
+		<Cursor position="2478" topLine="59" />
+	</File>
+	<File name="source\y3d\y3d_draw.c" open="0" top="0" tabpos="0">
+		<Cursor position="19928" topLine="671" />
+	</File>
+	<File name="source\y3d\y3d_draw.h" open="0" top="0" tabpos="3">
+		<Cursor position="3553" topLine="91" />
+	</File>
+	<File name="source\y3d\y3d_engine.c" open="0" top="0" tabpos="2">
+		<Cursor position="24830" topLine="858" />
+	</File>
+	<File name="source\y3d\y3d_engine.h" open="0" top="0" tabpos="0">
+		<Cursor position="1358" topLine="34" />
+	</File>
+	<File name="source\y3d\y3d_entity.c" open="0" top="0" tabpos="2">
+		<Cursor position="2292" topLine="93" />
+	</File>
+	<File name="source\y3d\y3d_entity.h" open="0" top="0" tabpos="3">
+		<Cursor position="809" topLine="19" />
+	</File>
+	<File name="source\y3d\y3d_file.c" open="0" top="0" tabpos="0">
+		<Cursor position="1102" topLine="34" />
+	</File>
+	<File name="source\y3d\y3d_file.h" open="0" top="0" tabpos="0">
+		<Cursor position="717" topLine="14" />
+	</File>
+	<File name="source\y3d\y3d_fixed.c" open="0" top="0" tabpos="0">
+		<Cursor position="612" topLine="0" />
+	</File>
+	<File name="source\y3d\y3d_fixed.h" open="0" top="0" tabpos="0">
+		<Cursor position="1076" topLine="31" />
+	</File>
+	<File name="source\y3d\y3d_fruity.c" open="0" top="0" tabpos="0">
+		<Cursor position="4429" topLine="148" />
+	</File>
+	<File name="source\y3d\y3d_fruity.h" open="0" top="0" tabpos="0">
+		<Cursor position="1431" topLine="36" />
+	</File>
+	<File name="source\y3d\y3d_image.c" open="0" top="0" tabpos="0">
+		<Cursor position="4076" topLine="131" />
+	</File>
+	<File name="source\y3d\y3d_image.h" open="0" top="0" tabpos="0">
+		<Cursor position="772" topLine="19" />
+	</File>
+	<File name="source\y3d\y3d_keyboard.c" open="0" top="0" tabpos="0">
+		<Cursor position="580" topLine="14" />
+	</File>
+	<File name="source\y3d\y3d_keyboard.h" open="0" top="0" tabpos="0">
+		<Cursor position="1761" topLine="55" />
+	</File>
+	<File name="source\y3d\y3d_map.h" open="0" top="0" tabpos="0">
+		<Cursor position="1084" topLine="24" />
+	</File>
+	<File name="source\y3d\y3d_matrix.c" open="0" top="0" tabpos="0">
+		<Cursor position="2270" topLine="66" />
+	</File>
+	<File name="source\y3d\y3d_matrix.h" open="0" top="0" tabpos="0">
+		<Cursor position="1289" topLine="27" />
+	</File>
+	<File name="source\y3d\y3d_pixel.c" open="0" top="0" tabpos="3">
+		<Cursor position="3542" topLine="140" />
+	</File>
+	<File name="source\y3d\y3d_pixel.h" open="0" top="0" tabpos="4">
+		<Cursor position="744" topLine="42" />
+	</File>
+	<File name="source\y3d\y3d_quake.h" open="0" top="0" tabpos="0">
+		<Cursor position="580" topLine="72" />
+	</File>
+	<File name="source\y3d\y3d_record.c" open="0" top="0" tabpos="2">
+		<Cursor position="645" topLine="69" />
+	</File>
+	<File name="source\y3d\y3d_record.h" open="0" top="0" tabpos="0">
+		<Cursor position="576" topLine="24" />
+	</File>
+	<File name="source\y3d\y3d_sound.c" open="0" top="0" tabpos="0">
+		<Cursor position="601" topLine="9" />
+	</File>
+	<File name="source\y3d\y3d_sound.h" open="0" top="0" tabpos="0">
+		<Cursor position="673" topLine="26" />
+	</File>
+	<File name="source\y3d\y3d_spanner.c" open="0" top="0" tabpos="0">
+		<Cursor position="681" topLine="98" />
+	</File>
+	<File name="source\y3d\y3d_spanner.h" open="0" top="0" tabpos="0">
+		<Cursor position="1332" topLine="10" />
+	</File>
+	<File name="source\y3d\y3d_surface.c" open="0" top="0" tabpos="0">
+		<Cursor position="563" topLine="84" />
+	</File>
+	<File name="source\y3d\y3d_surface.h" open="0" top="0" tabpos="0">
+		<Cursor position="1489" topLine="8" />
+	</File>
+	<File name="source\y3d\y3d_texture.h" open="0" top="0" tabpos="0">
+		<Cursor position="837" topLine="24" />
+	</File>
+	<File name="source\y3d\y3d_vertex.c" open="0" top="0" tabpos="0">
+		<Cursor position="483" topLine="59" />
+	</File>
+	<File name="source\y3d\y3d_vertex.h" open="0" top="0" tabpos="0">
+		<Cursor position="2080" topLine="56" />
+	</File>
+	<File name="source\y3d\y3d_viewport.h" open="0" top="0" tabpos="1">
+		<Cursor position="1255" topLine="35" />
+	</File>
+	<File name="source\y3d\y3d_yeti.c" open="0" top="0" tabpos="3">
+		<Cursor position="5788" topLine="249" />
+	</File>
+	<File name="source\y3d\y3d_yeti.h" open="0" top="0" tabpos="4">
+		<Cursor position="3514" topLine="137" />
+	</File>
+</CodeBlocks_layout_file>

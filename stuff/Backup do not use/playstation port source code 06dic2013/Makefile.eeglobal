@@ -1,0 +1,127 @@
+# _____     ___ ____     ___ ____
+#  ____|   |    ____|   |        | |____|
+# |     ___|   |____ ___|    ____| |    \    PS2DEV Open Source Project.
+#-----------------------------------------------------------------------
+# Copyright 2001-2004, ps2dev - http://www.ps2dev.org
+# Licenced under Academic Free License version 2.0
+# Review ps2sdk README & LICENSE files for further details.
+#
+# $Id: Makefile.eeglobal_sample 1610 2009-09-16 17:44:33Z jim $
+
+# Include directories
+EE_INCS :=   -I$(PS2SDK)/ee/include   \
+	-I$(PS2SDK)/common/include  \
+	-I$(PS2SDK)/ee/ee/include     \
+	-I$(PS2SDK)/ports/include/SDL  \
+        -I$(PS2SDK)/ports/include   \
+    -I$(PS2SDK)/samples/bennugd/core/bgdrtm/include  \
+	-I$(PS2SDK)/samples/bennugd/core/bgdi/include   \
+	-I$(PS2SDK)/samples/bennugd/core/include   \
+	-I$(PS2SDK)/samples/bennugd/core/bgdc/include   \
+-IC:/ps2dev/msys/1.0/local/ps2dev/ee/ee/include \
+-I$(PS2SDK)/samples/bennugd/modules/libblit \
+-I$(PS2SDK)/samples/bennugd/modules/libdraw \
+-I$(PS2SDK)/samples/bennugd/modules/libfont \
+-I$(PS2SDK)/samples/bennugd/modules/libgrbase \
+-I$(PS2SDK)/samples/bennugd/modules/libjoy \
+-I$(PS2SDK)/samples/bennugd/modules/libkey \
+-I$(PS2SDK)/samples/bennugd/modules/libmouse \
+-I$(PS2SDK)/samples/bennugd/modules/librender \
+-I$(PS2SDK)/samples/bennugd/modules/libscroll \
+-I$(PS2SDK)/samples/bennugd/modules/libsdlhandler \
+-I$(PS2SDK)/samples/bennugd/modules/libtext \
+-I$(PS2SDK)/samples/bennugd/modules/libvideo \
+-I$(PS2SDK)/samples/bennugd/modules/libwm \
+-I$(PS2SDK)/samples/bennugd/modules/mod_blendop \
+-I$(PS2SDK)/samples/bennugd/modules/mod_cd \
+-I$(PS2SDK)/samples/bennugd/modules/mod_say \
+-I$(PS2SDK)/samples/bennugd/modules/mod_string \
+-I$(PS2SDK)/samples/bennugd/modules/mod_math \
+-I$(PS2SDK)/samples/bennugd/modules/mod_mathi \
+-I$(PS2SDK)/samples/bennugd/modules/mod_time \
+-I$(PS2SDK)/samples/bennugd/modules/mod_file \
+-I$(PS2SDK)/samples/bennugd/modules/mod_joy \
+-I$(PS2SDK)/samples/bennugd/modules/mod_proc \
+-I$(PS2SDK)/samples/bennugd/modules/mod_sort \
+-I$(PS2SDK)/samples/bennugd/modules/mod_timers \
+-I$(PS2SDK)/samples/bennugd/modules/mod_timers \
+-I$(PS2SDK)/samples/bennugd/modules/mod_video \
+-I$(PS2SDK)/samples/bennugd/modules/mod_mouse \
+-I$(PS2SDK)/samples/bennugd/modules/mod_map \
+-I$(PS2SDK)/samples/bennugd/modules/mod_dir \
+-I$(PS2SDK)/samples/bennugd/modules/mod_text \
+-I$(PS2SDK)/samples/bennugd/modules/mod_rand \
+-I$(PS2SDK)/samples/bennugd/modules/mod_grproc \
+-I$(PS2SDK)/samples/bennugd/modules/mod_scroll \
+-I$(PS2SDK)/samples/bennugd/modules/mod_draw \
+-I$(PS2SDK)/samples/bennugd/modules/mod_screen \
+-I$(PS2SDK)/samples/bennugd/modules/mod_video \
+-I$(PS2SDK)/samples/bennugd/modules/mod_path \
+-I$(PS2SDK)/samples/bennugd/modules/mod_effects \
+-I$(PS2SDK)/samples/bennugd/modules/mod_blendop \
+-I$(PS2SDK)/samples/bennugd/modules/mod_m7 \
+-I$(PS2SDK)/samples/bennugd/modules/mod_wm \
+-I$(PS2SDK)/samples/bennugd/modules/mod_sys \
+-I$(PS2SDK)/samples/bennugd/modules/mod_mem \
+-I$(PS2SDK)/samples/bennugd/modules/mod_flic \
+-I$(PS2SDK)/samples/bennugd/modules/mod_key \
+-I$(PS2SDK)/samples/bennugd/modules/mod_sound \
+-I$(PS2SDK)/samples/bennugd/modules/mod_regex \
+-I$(PS2SDK)/samples/bennugd/yeti3d \
+-I$(PS2SDK)/samples/bennugd/yeti3d/source/game \
+-I$(PS2SDK)/samples/bennugd/yeti3d/source/y3d \
+-I$(PS2SDK)/samples/bennugd/mod_ps2 \
+-I$(EE_INCS)
+
+
+
+# C compiler flags
+EE_CFLAGS := -D_EE -O2 -G0 -Wall $(EE_CFLAGS) -D__MONOLITHIC__ -DPLAYSTATION2 \
+-DNO_MODICONV -DNO_MODIMAGE -DNO_MODCHIPMUNK -DNO_MODMULTI \
+-DNO_MODFMODEX -DNO_MODCURL -DUSE_RWOPS -DLITTLE_ENDIAN -s
+
+# C++ compiler flags
+EE_CXXFLAGS := -D_EE -O2 -G0 -Wall $(EE_CXXFLAGS)
+
+# Linker flags
+EE_LDFLAGS := -L$(PS2SDK)/ee/lib $(EE_LDFLAGS) -LC:/ps2dev/msys/1.0/local/ps2dev/ps2sdk/ports/lib
+
+# Assembler flags
+EE_ASFLAGS := -G0 $(EE_ASFLAGS)
+
+# Link with following libraries.  This is a special case, and instead of
+# allowing the user to override the library order, we always make sure
+# libkernel is the last library to be linked.
+EE_LIBS += -lc -lkernel
+
+# Externally defined variables: EE_BIN, EE_OBJS, EE_LIB
+
+# These macros can be used to simplify certain build rules.
+EE_C_COMPILE = $(EE_CC) $(EE_CFLAGS) $(EE_INCS)
+EE_CXX_COMPILE = $(EE_CXX) $(EE_CXXFLAGS) $(EE_INCS)
+
+%.o : %.c
+	$(EE_CC) $(EE_CFLAGS) $(EE_INCS) -c $< -o $@
+
+%.o : %.cc
+	$(EE_CXX) $(EE_CXXFLAGS) $(EE_INCS) -c $< -o $@
+
+%.o : %.cpp
+	$(EE_CXX) $(EE_CXXFLAGS) $(EE_INCS) -c $< -o $@
+
+%.o : %.S
+	$(EE_CC) $(EE_CFLAGS) $(EE_INCS) -c $< -o $@
+
+%.o : %.s
+	$(EE_AS) $(EE_ASFLAGS) $< -o $@
+
+$(EE_BIN) : $(EE_OBJS) $(PS2SDK)/ee/startup/crt0.o
+	$(EE_CC) -mno-crt0 -T$(PS2SDK)/ee/startup/linkfile $(EE_CFLAGS) \
+		-o $(EE_BIN) $(PS2SDK)/ee/startup/crt0.o $(EE_OBJS) $(EE_LDFLAGS) $(EE_LIBS)
+
+$(EE_ERL) : $(EE_OBJS)
+	$(EE_CC) -mno-crt0 -o $(EE_ERL) $(EE_OBJS) $(EE_CFLAGS) $(EE_LDFLAGS) -Wl,-r -Wl,-d
+	$(EE_STRIP) --strip-unneeded -R .mdebug.eabi64 -R .reginfo -R .comment $(EE_ERL)
+
+$(EE_LIB) : $(EE_OBJS)
+	$(EE_AR) cru $(EE_LIB) $(EE_OBJS)
